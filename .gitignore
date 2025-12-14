@@ -1,0 +1,16 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.vsidx
+.vscode/
+
+# Build folders
+bin/
+obj/
+Debug/
+Release/
+
+# System files
+Thumbs.db
+*.log
