@@ -24,6 +24,7 @@ namespace NewsApp.BLL
         public event Action<string>? ConnectionStatusChanged;
         public event Action<Packet, string>? ReceivedData;
         public event Action<string>? ErrorData;
+        public event Action<bool, string>? UpdateProfileResult;
 
         public bool IsConnected { get { return _socketClient != null && _socketClient.IsConnected; } }
 
@@ -71,6 +72,13 @@ namespace NewsApp.BLL
                     {
                         RegisterResult?.Invoke(false, "Đăng ký thất bại");
                     }
+                    break;
+                case MessageProtocol.ResponseCommand.UPDATE_PROFILE_SUCCESS:
+                    UpdateProfileResult?.Invoke(true, "Cập nhật thông tin thành công!");
+                    break;
+
+                case MessageProtocol.ResponseCommand.UPDATE_PROFILE_FAIL:
+                    UpdateProfileResult?.Invoke(false, "Cập nhật thất bại: " + packet.Payload);
                     break;
                 default:
                     break;
@@ -138,5 +146,20 @@ namespace NewsApp.BLL
             }
         }
 
+        public void UpdateProfile(User user)
+        {
+            if (IsConnected)
+            {
+                // Serialize User thành JSON (bao gồm cả Avatar byte[])
+                string payload = JsonSerializer.Serialize(user);
+
+                Packet request = new Packet(
+                    MessageProtocol.RequestCommand.UPDATE_PROFILE,
+                    payload
+                );
+
+                _socketClient.SendRequest(request);
+            }
+        }
     }
 }

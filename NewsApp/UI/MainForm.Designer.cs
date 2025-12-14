@@ -67,10 +67,10 @@
             guna2Panel1.Controls.Add(cbCategories);
             guna2Panel1.CustomizableEdges = customizableEdges13;
             guna2Panel1.Dock = DockStyle.Top;
-            guna2Panel1.Location = new Point(5, 5);
+            guna2Panel1.Location = new Point(10, 10);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            guna2Panel1.Size = new Size(1474, 123);
+            guna2Panel1.Size = new Size(1464, 123);
             guna2Panel1.TabIndex = 0;
             // 
             // btnAdminPanel
@@ -192,10 +192,10 @@
             guna2Panel2.Controls.Add(flpArticles);
             guna2Panel2.CustomizableEdges = customizableEdges15;
             guna2Panel2.Dock = DockStyle.Fill;
-            guna2Panel2.Location = new Point(5, 128);
+            guna2Panel2.Location = new Point(10, 133);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            guna2Panel2.Size = new Size(1474, 819);
+            guna2Panel2.Size = new Size(1464, 809);
             guna2Panel2.TabIndex = 1;
             // 
             // flpArticles
@@ -206,7 +206,7 @@
             flpArticles.Margin = new Padding(5);
             flpArticles.Name = "flpArticles";
             flpArticles.Padding = new Padding(16);
-            flpArticles.Size = new Size(1474, 819);
+            flpArticles.Size = new Size(1464, 809);
             flpArticles.TabIndex = 0;
             // 
             // MainForm
@@ -220,8 +220,7 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Margin = new Padding(5);
             Name = "MainForm";
-            Padding = new Padding(5);
-            StartPosition = FormStartPosition.CenterScreen;
+            Padding = new Padding(10);
             Text = "NewsApp - Trang chủ";
             guna2Panel1.ResumeLayout(false);
             guna2Panel2.ResumeLayout(false);

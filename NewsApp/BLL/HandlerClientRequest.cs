@@ -689,7 +689,38 @@ namespace NewsApp.BLL
                         }
                     }
                     break;
-
+                case MessageProtocol.RequestCommand.UPDATE_PROFILE:
+                    {
+                        try
+                        {
+                            User? userToUpdate = JsonSerializer.Deserialize<User>(payload);
+                            if (userToUpdate != null)
+                            {
+                                // Gọi Repository để update vào DB
+                                if (_userRepository.Update(userToUpdate))
+                                {
+                                    Packet success = new(
+                                        MessageProtocol.ResponseCommand.UPDATE_PROFILE_SUCCESS,
+                                        "Cập nhật thành công"
+                                    );
+                                    _streamWriter.WriteLine(JsonSerializer.Serialize(success));
+                                }
+                                else
+                                {
+                                    Packet fail = new Packet(
+                                        MessageProtocol.ResponseCommand.UPDATE_PROFILE_FAIL,
+                                        "Lỗi Database"
+                                    );
+                                    _streamWriter.WriteLine(JsonSerializer.Serialize(fail));
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("Update Profile Error: " + ex.Message);
+                        }
+                    }
+                    break;
 
 
                 default:

@@ -29,7 +29,6 @@ namespace NewsApp.UI
         private void InitializeComponent()
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pbAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             lblAuthor = new Label();
             lblContent = new Label();
@@ -41,11 +40,13 @@ namespace NewsApp.UI
             // 
             pbAvatar.FillColor = Color.LightGray;
             pbAvatar.ImageRotate = 0F;
-            pbAvatar.Location = new Point(10, 10);
+            pbAvatar.Location = new Point(16, 16);
+            pbAvatar.Margin = new Padding(5, 5, 5, 5);
             pbAvatar.Name = "pbAvatar";
             pbAvatar.ShadowDecoration.CustomizableEdges = customizableEdges1;
             pbAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            pbAvatar.Size = new Size(40, 40);
+            pbAvatar.Size = new Size(65, 64);
+            pbAvatar.SizeMode = PictureBoxSizeMode.Zoom;
             pbAvatar.TabIndex = 0;
             pbAvatar.TabStop = false;
             // 
@@ -53,9 +54,10 @@ namespace NewsApp.UI
             // 
             lblAuthor.AutoSize = true;
             lblAuthor.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lblAuthor.Location = new Point(60, 10);
+            lblAuthor.Location = new Point(98, 16);
+            lblAuthor.Margin = new Padding(5, 0, 5, 0);
             lblAuthor.Name = "lblAuthor";
-            lblAuthor.Size = new Size(60, 20);
+            lblAuthor.Size = new Size(94, 32);
             lblAuthor.TabIndex = 1;
             lblAuthor.Text = "Author";
             // 
@@ -63,9 +65,10 @@ namespace NewsApp.UI
             // 
             lblContent.AutoSize = true;
             lblContent.Font = new Font("Segoe UI", 9F);
-            lblContent.Location = new Point(60, 35);
+            lblContent.Location = new Point(98, 56);
+            lblContent.Margin = new Padding(5, 0, 5, 0);
             lblContent.Name = "lblContent";
-            lblContent.Size = new Size(61, 20);
+            lblContent.Size = new Size(100, 32);
             lblContent.TabIndex = 2;
             lblContent.Text = "Content";
             // 
@@ -74,23 +77,25 @@ namespace NewsApp.UI
             lblDate.AutoSize = true;
             lblDate.Font = new Font("Segoe UI", 8F);
             lblDate.ForeColor = Color.Gray;
-            lblDate.Location = new Point(60, 60);
+            lblDate.Location = new Point(98, 96);
+            lblDate.Margin = new Padding(5, 0, 5, 0);
             lblDate.Name = "lblDate";
-            lblDate.Size = new Size(38, 19);
+            lblDate.Size = new Size(58, 30);
             lblDate.TabIndex = 3;
             lblDate.Text = "Date";
             // 
             // CommentControl
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             Controls.Add(lblDate);
             Controls.Add(lblContent);
             Controls.Add(lblAuthor);
             Controls.Add(pbAvatar);
+            Margin = new Padding(5, 5, 5, 5);
             Name = "CommentControl";
-            Size = new Size(750, 90);
+            Size = new Size(1219, 144);
             ((System.ComponentModel.ISupportInitialize)pbAvatar).EndInit();
             ResumeLayout(false);
             PerformLayout();

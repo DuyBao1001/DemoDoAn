@@ -17,5 +17,6 @@ namespace NewsApp.Data
         public int AccountID { get; set; }
         public required string UserName { get; set;}
         public string Role { get; set; } = "Reader";
+        public byte[]? Avatar { get; set; }
     }
 }
