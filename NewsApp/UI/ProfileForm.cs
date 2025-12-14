@@ -18,7 +18,6 @@ namespace NewsApp.UI
             InitializeComponent();
             User = user;
 
-            // 2. KHỞI TẠO SERVICE VÀ ĐĂNG KÝ SỰ KIỆN
             _accountServices = new AccountServices();
             _accountServices.UpdateProfileResult += OnUpdateProfileResult;
         }
@@ -93,7 +92,7 @@ namespace NewsApp.UI
                 {
                     using (MemoryStream ms = new MemoryStream(User.Avatar))
                     {
-                        // SỬA LỖI: Phải tạo new Bitmap để copy dữ liệu ra khỏi stream
+                        //Phải tạo new Bitmap để copy dữ liệu ra khỏi stream
                         picBoxProfileAvatar.Image = new Bitmap(Image.FromStream(ms));
                     }
                 }
@@ -116,17 +115,17 @@ namespace NewsApp.UI
             {
                 try
                 {
-                    // 1. Tạo Bitmap mới từ file để không bị lock file gốc
+                    //Tạo Bitmap mới từ file để không bị lock file gốc
                     Bitmap newAvatar;
                     using (var stream = new FileStream(open.FileName, FileMode.Open, FileAccess.Read))
                     {
                         newAvatar = new Bitmap(stream);
                     }
 
-                    // 2. Gán vào PictureBox
+                    //Gán vào PictureBox
                     picBoxProfileAvatar.Image = newAvatar;
 
-                    // 3. Lưu vào User Object (Chuyển thành byte[])
+                    //Lưu vào User Object (Chuyển thành byte[])
                     using (MemoryStream ms = new MemoryStream())
                     {
                         // Lưu dưới dạng PNG hoặc JPEG để tối ưu dung lượng
@@ -143,16 +142,10 @@ namespace NewsApp.UI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            // Cập nhật các thông tin khác từ Textbox
             User.FullName = txtFullName.Text;
             User.Email = txtEmail.Text;
-            // User.Avatar đã được cập nhật ở nút Upload
 
-            // Gửi lệnh lên Server (Giả sử AccountServices có hàm UpdateProfile)
-            // Nếu chưa có, bạn có thể gọi trực tiếp socket gửi Packet UPDATE_PROFILE
             _accountServices.UpdateProfile(User);
-
-            MessageBox.Show("Đã gửi yêu cầu cập nhật!");
         }
     }
 }
