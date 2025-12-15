@@ -71,7 +71,7 @@ namespace NewsApp.UI
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            guna2Panel1.Size = new Size(726, 965);
+            guna2Panel1.Size = new Size(726, 997);
             guna2Panel1.TabIndex = 0;
             // 
             // btnSave
@@ -85,7 +85,7 @@ namespace NewsApp.UI
             btnSave.FillColor = Color.FromArgb(0, 192, 0);
             btnSave.Font = new Font("Segoe UI", 10F);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(406, 295);
+            btnSave.Location = new Point(407, 341);
             btnSave.Name = "btnSave";
             btnSave.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnSave.Size = new Size(141, 45);
@@ -104,7 +104,7 @@ namespace NewsApp.UI
             btnUploadAvatar.FillColor = Color.Gray;
             btnUploadAvatar.Font = new Font("Segoe UI", 10F);
             btnUploadAvatar.ForeColor = Color.White;
-            btnUploadAvatar.Location = new Point(163, 295);
+            btnUploadAvatar.Location = new Point(164, 341);
             btnUploadAvatar.Name = "btnUploadAvatar";
             btnUploadAvatar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnUploadAvatar.Size = new Size(141, 45);
@@ -123,7 +123,7 @@ namespace NewsApp.UI
             btnLogout.FillColor = Color.Firebrick;
             btnLogout.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnLogout.ForeColor = Color.White;
-            btnLogout.Location = new Point(406, 821);
+            btnLogout.Location = new Point(407, 867);
             btnLogout.Name = "btnLogout";
             btnLogout.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnLogout.Size = new Size(211, 64);
@@ -142,7 +142,7 @@ namespace NewsApp.UI
             btnBack.FillColor = Color.Gray;
             btnBack.Font = new Font("Segoe UI", 10F);
             btnBack.ForeColor = Color.White;
-            btnBack.Location = new Point(114, 821);
+            btnBack.Location = new Point(115, 867);
             btnBack.Name = "btnBack";
             btnBack.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnBack.Size = new Size(211, 64);
@@ -161,7 +161,7 @@ namespace NewsApp.UI
             txtEmail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtEmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtEmail.Font = new Font("Segoe UI", 10F);
-            txtEmail.Location = new Point(114, 719);
+            txtEmail.Location = new Point(115, 765);
             txtEmail.Margin = new Padding(6, 6, 6, 6);
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "";
@@ -176,7 +176,7 @@ namespace NewsApp.UI
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             label3.ForeColor = SystemColors.HotTrack;
-            label3.Location = new Point(114, 656);
+            label3.Location = new Point(115, 702);
             label3.Name = "label3";
             label3.Size = new Size(103, 41);
             label3.TabIndex = 6;
@@ -193,7 +193,7 @@ namespace NewsApp.UI
             txtRole.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtRole.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtRole.Font = new Font("Segoe UI", 10F);
-            txtRole.Location = new Point(114, 583);
+            txtRole.Location = new Point(115, 629);
             txtRole.Margin = new Padding(6, 6, 6, 6);
             txtRole.Name = "txtRole";
             txtRole.PlaceholderText = "";
@@ -208,7 +208,7 @@ namespace NewsApp.UI
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             label2.ForeColor = SystemColors.HotTrack;
-            label2.Location = new Point(114, 520);
+            label2.Location = new Point(115, 566);
             label2.Name = "label2";
             label2.Size = new Size(119, 41);
             label2.TabIndex = 4;
@@ -225,7 +225,7 @@ namespace NewsApp.UI
             txtFullName.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtFullName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtFullName.Font = new Font("Segoe UI", 10F);
-            txtFullName.Location = new Point(114, 443);
+            txtFullName.Location = new Point(115, 489);
             txtFullName.Margin = new Padding(6, 6, 6, 6);
             txtFullName.Name = "txtFullName";
             txtFullName.PlaceholderText = "";
@@ -240,7 +240,7 @@ namespace NewsApp.UI
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             label1.ForeColor = SystemColors.HotTrack;
-            label1.Location = new Point(114, 384);
+            label1.Location = new Point(115, 430);
             label1.Name = "label1";
             label1.Size = new Size(164, 41);
             label1.TabIndex = 2;
@@ -250,7 +250,7 @@ namespace NewsApp.UI
             // 
             labelUserName.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             labelUserName.ForeColor = Color.DimGray;
-            labelUserName.Location = new Point(-8, 216);
+            labelUserName.Location = new Point(-8, 250);
             labelUserName.Name = "labelUserName";
             labelUserName.Size = new Size(731, 48);
             labelUserName.TabIndex = 1;
@@ -275,7 +275,8 @@ namespace NewsApp.UI
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(726, 965);
+            AutoScroll = true;
+            ClientSize = new Size(726, 997);
             Controls.Add(guna2Panel1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;

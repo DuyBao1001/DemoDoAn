@@ -54,7 +54,6 @@ namespace NewsApp.UI
                 flpComments.Controls.Add(commentControl);
             }
 
-            pnComment.Location = new Point(12, flpComments.Bottom + 20);
         }
 
         private void CommentServices_DataChanged(bool success, string message)

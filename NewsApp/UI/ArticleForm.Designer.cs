@@ -32,12 +32,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pbImage = new Guna.UI2.WinForms.Guna2PictureBox();
             lblTitle = new Label();
             lblCategory = new Label();
@@ -46,8 +46,8 @@
             txtContent = new Guna.UI2.WinForms.Guna2TextBox();
             flpComments = new FlowLayoutPanel();
             pnComment = new Guna.UI2.WinForms.Guna2Panel();
-            txtComment = new Guna.UI2.WinForms.Guna2TextBox();
             btnSendComment = new Guna.UI2.WinForms.Guna2Button();
+            txtComment = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)pbImage).BeginInit();
             pnComment.SuspendLayout();
             SuspendLayout();
@@ -58,10 +58,11 @@
             pbImage.CustomizableEdges = customizableEdges1;
             pbImage.FillColor = Color.LightGray;
             pbImage.ImageRotate = 0F;
-            pbImage.Location = new Point(12, 12);
+            pbImage.Location = new Point(10, 9);
+            pbImage.Margin = new Padding(3, 2, 3, 2);
             pbImage.Name = "pbImage";
             pbImage.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            pbImage.Size = new Size(776, 300);
+            pbImage.Size = new Size(679, 225);
             pbImage.SizeMode = PictureBoxSizeMode.Zoom;
             pbImage.TabIndex = 0;
             pbImage.TabStop = false;
@@ -70,9 +71,9 @@
             // lblTitle
             // 
             lblTitle.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            lblTitle.Location = new Point(12, 325);
+            lblTitle.Location = new Point(10, 244);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(776, 70);
+            lblTitle.Size = new Size(679, 52);
             lblTitle.TabIndex = 1;
             lblTitle.Text = "Tiêu đề bài viết";
             // 
@@ -81,9 +82,9 @@
             lblCategory.AutoSize = true;
             lblCategory.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblCategory.ForeColor = Color.DodgerBlue;
-            lblCategory.Location = new Point(12, 400);
+            lblCategory.Location = new Point(10, 300);
             lblCategory.Name = "lblCategory";
-            lblCategory.Size = new Size(91, 23);
+            lblCategory.Size = new Size(75, 19);
             lblCategory.TabIndex = 2;
             lblCategory.Text = "Danh mục";
             // 
@@ -92,9 +93,9 @@
             lblAuthor.AutoSize = true;
             lblAuthor.Font = new Font("Segoe UI", 9F);
             lblAuthor.ForeColor = Color.Gray;
-            lblAuthor.Location = new Point(120, 402);
+            lblAuthor.Location = new Point(105, 302);
             lblAuthor.Name = "lblAuthor";
-            lblAuthor.Size = new Size(55, 20);
+            lblAuthor.Size = new Size(44, 15);
             lblAuthor.TabIndex = 3;
             lblAuthor.Text = "Tác giả";
             // 
@@ -103,9 +104,9 @@
             lblDate.AutoSize = true;
             lblDate.Font = new Font("Segoe UI", 9F);
             lblDate.ForeColor = Color.Gray;
-            lblDate.Location = new Point(680, 402);
+            lblDate.Location = new Point(595, 302);
             lblDate.Name = "lblDate";
-            lblDate.Size = new Size(101, 20);
+            lblDate.Size = new Size(83, 15);
             lblDate.TabIndex = 4;
             lblDate.Text = "DD/MM/YYYY";
             lblDate.TextAlign = ContentAlignment.TopRight;
@@ -123,8 +124,8 @@
             txtContent.Font = new Font("Segoe UI", 11F);
             txtContent.ForeColor = Color.Black;
             txtContent.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtContent.Location = new Point(12, 440);
-            txtContent.Margin = new Padding(4);
+            txtContent.Location = new Point(10, 330);
+            txtContent.Margin = new Padding(4, 3, 4, 3);
             txtContent.Multiline = true;
             txtContent.Name = "txtContent";
             txtContent.PlaceholderText = "";
@@ -132,7 +133,7 @@
             txtContent.ScrollBars = ScrollBars.Vertical;
             txtContent.SelectedText = "";
             txtContent.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            txtContent.Size = new Size(776, 300);
+            txtContent.Size = new Size(679, 240);
             txtContent.TabIndex = 5;
             // 
             // flpComments
@@ -140,11 +141,12 @@
             flpComments.AutoScroll = true;
             flpComments.AutoSize = true;
             flpComments.FlowDirection = FlowDirection.TopDown;
-            flpComments.Location = new Point(12, 750);
-            flpComments.MaximumSize = new Size(776, 0);
-            flpComments.MinimumSize = new Size(776, 10);
+            flpComments.Location = new Point(9, 674);
+            flpComments.Margin = new Padding(3, 2, 3, 2);
+            flpComments.MaximumSize = new Size(679, 0);
+            flpComments.MinimumSize = new Size(679, 8);
             flpComments.Name = "flpComments";
-            flpComments.Size = new Size(776, 10);
+            flpComments.Size = new Size(679, 8);
             flpComments.TabIndex = 6;
             flpComments.WrapContents = false;
             // 
@@ -152,13 +154,32 @@
             // 
             pnComment.Controls.Add(btnSendComment);
             pnComment.Controls.Add(txtComment);
-            pnComment.CustomizableEdges = customizableEdges5;
+            pnComment.CustomizableEdges = customizableEdges9;
             pnComment.FillColor = Color.WhiteSmoke;
-            pnComment.Location = new Point(12, 770);
+            pnComment.Location = new Point(9, 585);
+            pnComment.Margin = new Padding(3, 2, 3, 2);
             pnComment.Name = "pnComment";
-            pnComment.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            pnComment.Size = new Size(776, 100);
+            pnComment.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            pnComment.Size = new Size(679, 75);
             pnComment.TabIndex = 7;
+            // 
+            // btnSendComment
+            // 
+            btnSendComment.BorderRadius = 5;
+            btnSendComment.CustomizableEdges = customizableEdges5;
+            btnSendComment.DisabledState.BorderColor = Color.DarkGray;
+            btnSendComment.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnSendComment.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnSendComment.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnSendComment.Font = new Font("Segoe UI", 9F);
+            btnSendComment.ForeColor = Color.White;
+            btnSendComment.Location = new Point(578, 46);
+            btnSendComment.Margin = new Padding(3, 2, 3, 2);
+            btnSendComment.Name = "btnSendComment";
+            btnSendComment.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnSendComment.Size = new Size(88, 26);
+            btnSendComment.TabIndex = 1;
+            btnSendComment.Text = "Gửi";
             // 
             // txtComment
             // 
@@ -172,40 +193,21 @@
             txtComment.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtComment.Font = new Font("Segoe UI", 9F);
             txtComment.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtComment.Location = new Point(15, 15);
-            txtComment.Margin = new Padding(3, 4, 3, 4);
+            txtComment.Location = new Point(13, 11);
             txtComment.Name = "txtComment";
-            txtComment.PasswordChar = '\0';
             txtComment.PlaceholderText = "Viết bình luận...";
             txtComment.SelectedText = "";
             txtComment.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            txtComment.Size = new Size(746, 40);
+            txtComment.Size = new Size(653, 30);
             txtComment.TabIndex = 0;
-            // 
-            // btnSendComment
-            // 
-            btnSendComment.BorderRadius = 5;
-            btnSendComment.CustomizableEdges = customizableEdges9;
-            btnSendComment.DisabledState.BorderColor = Color.DarkGray;
-            btnSendComment.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnSendComment.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnSendComment.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnSendComment.Font = new Font("Segoe UI", 9F);
-            btnSendComment.ForeColor = Color.White;
-            btnSendComment.Location = new Point(661, 62);
-            btnSendComment.Name = "btnSendComment";
-            btnSendComment.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            btnSendComment.Size = new Size(100, 35);
-            btnSendComment.TabIndex = 1;
-            btnSendComment.Text = "Gửi";
             // 
             // ArticleForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.White;
-            ClientSize = new Size(800, 860);
+            ClientSize = new Size(700, 701);
             Controls.Add(pnComment);
             Controls.Add(flpComments);
             Controls.Add(txtContent);
@@ -215,6 +217,7 @@
             Controls.Add(lblTitle);
             Controls.Add(pbImage);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "ArticleForm";
             StartPosition = FormStartPosition.CenterParent;

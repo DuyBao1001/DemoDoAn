@@ -187,7 +187,7 @@
             tabUsers.Location = new Point(4, 44);
             tabUsers.Name = "tabUsers";
             tabUsers.Padding = new Padding(3);
-            tabUsers.Size = new Size(1666, 827);
+            tabUsers.Size = new Size(1966, 1381);
             tabUsers.TabIndex = 1;
             tabUsers.Text = "Quản lý Người dùng";
             // 
@@ -203,7 +203,7 @@
             dgvUsers.ReadOnly = true;
             dgvUsers.RowHeadersWidth = 51;
             dgvUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvUsers.Size = new Size(1660, 744);
+            dgvUsers.Size = new Size(1960, 1298);
             dgvUsers.TabIndex = 0;
             // 
             // panelUsersTop
@@ -215,7 +215,7 @@
             panelUsersTop.Location = new Point(3, 3);
             panelUsersTop.Name = "panelUsersTop";
             panelUsersTop.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            panelUsersTop.Size = new Size(1660, 77);
+            panelUsersTop.Size = new Size(1960, 77);
             panelUsersTop.TabIndex = 1;
             // 
             // btnRefreshUsers
@@ -252,7 +252,7 @@
             tabCategories.Location = new Point(4, 44);
             tabCategories.Name = "tabCategories";
             tabCategories.Padding = new Padding(3);
-            tabCategories.Size = new Size(1666, 827);
+            tabCategories.Size = new Size(1966, 1381);
             tabCategories.TabIndex = 2;
             tabCategories.Text = "Quản lý Chuyên mục";
             // 
@@ -269,8 +269,8 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(gbCategoryDetails);
-            splitContainer1.Size = new Size(1660, 821);
-            splitContainer1.SplitterDistance = 840;
+            splitContainer1.Size = new Size(1960, 1375);
+            splitContainer1.SplitterDistance = 991;
             splitContainer1.SplitterWidth = 5;
             splitContainer1.TabIndex = 0;
             // 
@@ -286,7 +286,7 @@
             dgvCategories.ReadOnly = true;
             dgvCategories.RowHeadersWidth = 51;
             dgvCategories.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCategories.Size = new Size(840, 821);
+            dgvCategories.Size = new Size(991, 1375);
             dgvCategories.TabIndex = 0;
             // 
             // gbCategoryDetails
@@ -303,7 +303,7 @@
             gbCategoryDetails.Location = new Point(0, 0);
             gbCategoryDetails.Name = "gbCategoryDetails";
             gbCategoryDetails.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            gbCategoryDetails.Size = new Size(815, 821);
+            gbCategoryDetails.Size = new Size(964, 1375);
             gbCategoryDetails.TabIndex = 0;
             gbCategoryDetails.Text = "Chi tiết Chuyên mục";
             // 
@@ -381,7 +381,7 @@
             tabApproval.Location = new Point(4, 44);
             tabApproval.Name = "tabApproval";
             tabApproval.Padding = new Padding(3);
-            tabApproval.Size = new Size(1666, 827);
+            tabApproval.Size = new Size(1966, 1381);
             tabApproval.TabIndex = 3;
             tabApproval.Text = "Duyệt Bài viết";
             tabApproval.UseVisualStyleBackColor = true;
@@ -430,13 +430,14 @@
             dgvPendingArticles.Name = "dgvPendingArticles";
             dgvPendingArticles.RowHeadersWidth = 82;
             dgvPendingArticles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvPendingArticles.Size = new Size(1660, 648);
+            dgvPendingArticles.Size = new Size(1960, 648);
             dgvPendingArticles.TabIndex = 0;
             // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             BackColor = Color.White;
             ClientSize = new Size(1974, 1429);
             Controls.Add(tabControlAdmin);

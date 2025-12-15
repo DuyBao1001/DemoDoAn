@@ -55,22 +55,20 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.MenuHighlight;
-            label1.Location = new Point(33, 27);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Location = new Point(54, 43);
             label1.Name = "label1";
-            label1.Size = new Size(323, 37);
+            label1.Size = new Size(486, 59);
             label1.TabIndex = 0;
-            label1.Text = "Welcome to NewsDaily!";
+            label1.Text = "Welcome to NewsApp!";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 7.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.DimGray;
-            label2.Location = new Point(62, 92);
-            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Location = new Point(101, 147);
             label2.Name = "label2";
-            label2.Size = new Size(172, 15);
+            label2.Size = new Size(275, 25);
             label2.TabIndex = 1;
             label2.Text = "Vui lòng nhập đầy đủ thông tin";
             // 
@@ -79,10 +77,9 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.HotTrack;
-            label3.Location = new Point(62, 117);
-            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Location = new Point(101, 187);
             label3.Name = "label3";
-            label3.Size = new Size(116, 20);
+            label3.Size = new Size(190, 32);
             label3.TabIndex = 2;
             label3.Text = "Tên đăng nhập:";
             // 
@@ -91,30 +88,27 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.HotTrack;
-            label4.Location = new Point(62, 187);
-            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Location = new Point(101, 299);
             label4.Name = "label4";
-            label4.Size = new Size(79, 20);
+            label4.Size = new Size(128, 32);
             label4.TabIndex = 3;
             label4.Text = "Mật khẩu:";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(62, 319);
-            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Location = new Point(101, 510);
             label5.Name = "label5";
-            label5.Size = new Size(162, 20);
+            label5.Size = new Size(261, 32);
             label5.TabIndex = 8;
             label5.Text = "Bạn chưa có tài khoản?";
             // 
             // linkLabelSignUp
             // 
             linkLabelSignUp.AutoSize = true;
-            linkLabelSignUp.Location = new Point(251, 319);
-            linkLabelSignUp.Margin = new Padding(2, 0, 2, 0);
+            linkLabelSignUp.Location = new Point(408, 510);
             linkLabelSignUp.Name = "linkLabelSignUp";
-            linkLabelSignUp.Size = new Size(60, 20);
+            linkLabelSignUp.Size = new Size(96, 32);
             linkLabelSignUp.TabIndex = 9;
             linkLabelSignUp.TabStop = true;
             linkLabelSignUp.Text = "Đăng kí";
@@ -136,13 +130,13 @@
             tbUsername.IconRight = (Image)resources.GetObject("tbUsername.IconRight");
             tbUsername.IconRightOffset = new Point(10, 0);
             tbUsername.IconRightSize = new Size(30, 30);
-            tbUsername.Location = new Point(62, 141);
-            tbUsername.Margin = new Padding(4);
+            tbUsername.Location = new Point(101, 226);
+            tbUsername.Margin = new Padding(6, 6, 6, 6);
             tbUsername.Name = "tbUsername";
             tbUsername.PlaceholderText = "";
             tbUsername.SelectedText = "";
             tbUsername.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            tbUsername.Size = new Size(249, 42);
+            tbUsername.Size = new Size(405, 67);
             tbUsername.TabIndex = 23;
             // 
             // tbPassword
@@ -161,13 +155,13 @@
             tbPassword.IconRight = (Image)resources.GetObject("tbPassword.IconRight");
             tbPassword.IconRightOffset = new Point(10, 0);
             tbPassword.IconRightSize = new Size(30, 30);
-            tbPassword.Location = new Point(62, 212);
-            tbPassword.Margin = new Padding(4);
+            tbPassword.Location = new Point(101, 339);
+            tbPassword.Margin = new Padding(6, 6, 6, 6);
             tbPassword.Name = "tbPassword";
             tbPassword.PlaceholderText = "";
             tbPassword.SelectedText = "";
             tbPassword.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            tbPassword.Size = new Size(249, 42);
+            tbPassword.Size = new Size(405, 67);
             tbPassword.TabIndex = 24;
             // 
             // btnLogin
@@ -180,11 +174,10 @@
             btnLogin.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnLogin.Font = new Font("Segoe UI", 9F);
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(62, 276);
-            btnLogin.Margin = new Padding(2);
+            btnLogin.Location = new Point(101, 442);
             btnLogin.Name = "btnLogin";
             btnLogin.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnLogin.Size = new Size(249, 32);
+            btnLogin.Size = new Size(405, 51);
             btnLogin.TabIndex = 29;
             btnLogin.Text = "Đăng nhập";
             btnLogin.Click += BtnLogin_Click;
@@ -205,21 +198,21 @@
             guna2Panel1.Controls.Add(label2);
             guna2Panel1.Controls.Add(label4);
             guna2Panel1.CustomizableEdges = customizableEdges7;
-            guna2Panel1.Location = new Point(216, 27);
-            guna2Panel1.Margin = new Padding(2);
+            guna2Panel1.Location = new Point(351, 43);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2Panel1.Size = new Size(368, 371);
+            guna2Panel1.Size = new Size(598, 594);
             guna2Panel1.TabIndex = 30;
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1300, 720);
             Controls.Add(guna2Panel1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(5, 5, 5, 5);
             MaximizeBox = false;
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
