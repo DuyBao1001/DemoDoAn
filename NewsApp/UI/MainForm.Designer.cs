@@ -146,7 +146,7 @@
             btnSearch.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnSearch.Size = new Size(115, 54);
             btnSearch.TabIndex = 2;
-            btnSearch.Text = "Tìm kiếm";
+            btnSearch.Text = "Tìm";
             // 
             // txtSearch
             // 

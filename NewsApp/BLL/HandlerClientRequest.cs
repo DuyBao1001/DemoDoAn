@@ -51,15 +51,61 @@ namespace NewsApp.BLL
                     if (request == null)
                     {
                         Disconnect();
-                        _serverSocket.Log("[Client - INFO] Client đã ngắt kết nối.");
+                        _serverSocket.Log($"[Client - INFO] Client {_client.Client.RemoteEndPoint} đã ngắt kết nối.");
                         break;
                     }
+
                     Packet? packet = JsonSerializer.Deserialize<Packet>(request);
                     if (packet == null)
                     {
                         _serverSocket.Log("[Client - ERROR] Request không hợp lệ.");
                         continue;
                     }
+
+                    // --- BẮT ĐẦU XỬ LÝ HIỂN THỊ TÊN USER CHO MONITORING ---
+
+                    string clientEndPoint = _client.Client.RemoteEndPoint?.ToString() ?? "Unknown";
+                    string displayUser = "Guest"; // Mặc định là khách
+
+                    // TRƯỜNG HỢP 1: User đã đăng nhập thành công từ trước
+                    // Biến _currentUsername đã được set trong lần xử lý LOGIN trước đó
+                    if (!string.IsNullOrEmpty(_currentUsername))
+                    {
+                        displayUser = _currentUsername;
+                    }
+                    // TRƯỜNG HỢP 2: User CHƯA đăng nhập, nhưng đang gửi yêu cầu LOGIN
+                    // Chúng ta "nhìn trộm" gói tin để lấy Username họ đang nhập
+                    else if (packet.Command == MessageProtocol.RequestCommand.LOGIN)
+                    {
+                        try
+                        {
+                            var accLogin = JsonSerializer.Deserialize<Account>(packet.Payload);
+                            // Hiển thị dạng: "admin (Đang đăng nhập)"
+                            displayUser = $"{accLogin?.Username} (Login Request)";
+                        }
+                        catch { }
+                    }
+                    // TRƯỜNG HỢP 3: User đang gửi yêu cầu ĐĂNG KÝ
+                    else if (packet.Command == MessageProtocol.RequestCommand.REGISTER)
+                    {
+                        try
+                        {
+                            var accReg = JsonSerializer.Deserialize<RegisterModel>(packet.Payload);
+                            displayUser = $"{accReg?.Username} (Register Request)";
+                        }
+                        catch { }
+                    }
+
+                    // Tạo nội dung log
+                    // Ví dụ: [Request] [127.0.0.1:5544] User: admin -> Command: GET_LATEST_ARTICLES
+                    string logMessage = $"[Request] [{clientEndPoint}] User: {displayUser} -> Command: {packet.Command}";
+
+                    // Gửi log ra màn hình
+                    _serverSocket.Log(logMessage);
+
+                    // --- KẾT THÚC XỬ LÝ LOG ---
+
+                    // Sau khi log xong mới đưa vào xử lý logic
                     ProcessRequest(packet);
                 }
             }
