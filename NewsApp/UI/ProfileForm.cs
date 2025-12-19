@@ -147,5 +147,19 @@ namespace NewsApp.UI
 
             _accountServices.UpdateProfile(User);
         }
+
+        private void btnChangePass_Click(object sender, EventArgs e)
+        {
+            ChangePasswordForm changePassForm = new ChangePasswordForm(User, _accountServices);
+
+            if (changePassForm.ShowDialog() == DialogResult.OK)
+            {
+                DialogResult result = MessageBox.Show("Đổi mật khẩu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (result == DialogResult.OK)
+                {
+                    this.Close(); 
+                }
+            }
+        }
     }
 }

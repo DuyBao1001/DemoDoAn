@@ -9,5 +9,8 @@ namespace NewsApp.DAL
         public bool CheckUserNameExists(string userName);
         public bool Register(Account account);
         public Account? GetAccountByUsername(string userName);
+        public bool Update(Account account);
+        bool VerifyPassword(string username, string password);
+        bool UpdatePassword(string username, string newPassword);
     }
 }

@@ -175,5 +175,42 @@ namespace NewsApp.DAL
                 return null;
             }
         }
+
+        public bool UpdatePassword(string username, string newPassword)
+        {
+            try
+            {
+                using SqlConnection connection = GetConnection();
+                string query = "UPDATE Account SET Password = @password WHERE UserName = @userName";
+                SqlCommand command = new(query, connection);
+                command.Parameters.AddWithValue("@password", newPassword); 
+                command.Parameters.AddWithValue("@userName", username);
+
+                connection.Open();
+                return command.ExecuteNonQuery() > 0;
+            }
+            catch (SqlException sqle)
+            {
+                Console.WriteLine(sqle.Message);
+                return false;
+            }
+        }
+
+        public bool VerifyPassword(string username, string password)
+        {
+            try
+            {
+                using SqlConnection connection = GetConnection();
+                string query = "SELECT COUNT(1) FROM Account WHERE UserName = @u AND Password = @p";
+                SqlCommand command = new(query, connection);
+                command.Parameters.AddWithValue("@u", username);
+                command.Parameters.AddWithValue("@p", password); 
+
+                connection.Open();
+                int count = (int)command.ExecuteScalar();
+                return count > 0;
+            }
+            catch { return false; }
+        }
     }
 }

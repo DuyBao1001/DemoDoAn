@@ -25,6 +25,7 @@ namespace NewsApp.BLL
         public event Action<Packet, string>? ReceivedData;
         public event Action<string>? ErrorData;
         public event Action<bool, string>? UpdateProfileResult;
+        public event Action<bool, string>? ChangePasswordResult;
 
         public bool IsConnected { get { return _socketClient != null && _socketClient.IsConnected; } }
 
@@ -79,6 +80,14 @@ namespace NewsApp.BLL
 
                 case MessageProtocol.ResponseCommand.UPDATE_PROFILE_FAIL:
                     UpdateProfileResult?.Invoke(false, "Cập nhật thất bại: " + packet.Payload);
+                    break;
+                case MessageProtocol.ResponseCommand.CHANGE_PASSWORD_SUCCESS:
+                    ChangePasswordResult?.Invoke(true, "Đổi mật khẩu thành công!");
+                    break;
+
+                case MessageProtocol.ResponseCommand.CHANGE_PASSWORD_FAIL:
+                    string msg = JsonSerializer.Deserialize<string>(payload) ?? "Đổi mật khẩu thất bại";
+                    ChangePasswordResult?.Invoke(false, msg);
                     break;
                 default:
                     break;
@@ -157,6 +166,25 @@ namespace NewsApp.BLL
                     MessageProtocol.RequestCommand.UPDATE_PROFILE,
                     payload
                 );
+
+                _socketClient.SendRequest(request);
+            }
+        }
+
+        public void ChangePassword(string username, string oldPass, string newPass)
+        {
+            if (IsConnected)
+            {
+
+                ChangePasswordModel model = new ChangePasswordModel
+                {
+                    Username = username,
+                    OldPassword = oldPass,
+                    NewPassword = newPass
+                };
+
+                string payload = JsonSerializer.Serialize(model);
+                Packet request = new Packet(MessageProtocol.RequestCommand.CHANGE_PASSWORD, payload);
 
                 _socketClient.SendRequest(request);
             }

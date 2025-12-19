@@ -1,6 +1,4 @@
-﻿
-
-namespace NewsApp.UI
+﻿namespace NewsApp.UI
 {
     partial class ProfileForm
     {
@@ -16,8 +14,8 @@ namespace NewsApp.UI
 
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -34,7 +32,10 @@ namespace NewsApp.UI
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            btnChangePassword = new Guna.UI2.WinForms.Guna2Button();
             btnSave = new Guna.UI2.WinForms.Guna2Button();
             btnUploadAvatar = new Guna.UI2.WinForms.Guna2Button();
             btnLogout = new Guna.UI2.WinForms.Guna2Button();
@@ -54,6 +55,7 @@ namespace NewsApp.UI
             // guna2Panel1
             // 
             guna2Panel1.BackColor = SystemColors.MenuBar;
+            guna2Panel1.Controls.Add(btnChangePassword);
             guna2Panel1.Controls.Add(btnSave);
             guna2Panel1.Controls.Add(btnUploadAvatar);
             guna2Panel1.Controls.Add(btnLogout);
@@ -66,18 +68,39 @@ namespace NewsApp.UI
             guna2Panel1.Controls.Add(label1);
             guna2Panel1.Controls.Add(labelUserName);
             guna2Panel1.Controls.Add(picBoxProfileAvatar);
-            guna2Panel1.CustomizableEdges = customizableEdges17;
+            guna2Panel1.CustomizableEdges = customizableEdges19;
             guna2Panel1.Dock = DockStyle.Fill;
             guna2Panel1.Location = new Point(0, 0);
+            guna2Panel1.Margin = new Padding(2, 2, 2, 2);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            guna2Panel1.Size = new Size(726, 997);
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            guna2Panel1.Size = new Size(558, 779);
             guna2Panel1.TabIndex = 0;
+            // 
+            // btnChangePassword
+            // 
+            btnChangePassword.BorderRadius = 5;
+            btnChangePassword.CustomizableEdges = customizableEdges1;
+            btnChangePassword.DisabledState.BorderColor = Color.DarkGray;
+            btnChangePassword.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnChangePassword.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnChangePassword.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnChangePassword.FillColor = Color.RoyalBlue;
+            btnChangePassword.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnChangePassword.ForeColor = Color.White;
+            btnChangePassword.Location = new Point(88, 656);
+            btnChangePassword.Margin = new Padding(2, 2, 2, 2);
+            btnChangePassword.Name = "btnChangePassword";
+            btnChangePassword.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnChangePassword.Size = new Size(388, 35);
+            btnChangePassword.TabIndex = 12;
+            btnChangePassword.Text = "Đổi mật khẩu";
+            btnChangePassword.Click += btnChangePass_Click;
             // 
             // btnSave
             // 
             btnSave.BorderRadius = 5;
-            btnSave.CustomizableEdges = customizableEdges1;
+            btnSave.CustomizableEdges = customizableEdges3;
             btnSave.DisabledState.BorderColor = Color.DarkGray;
             btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -85,10 +108,11 @@ namespace NewsApp.UI
             btnSave.FillColor = Color.FromArgb(0, 192, 0);
             btnSave.Font = new Font("Segoe UI", 10F);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(407, 341);
+            btnSave.Location = new Point(313, 266);
+            btnSave.Margin = new Padding(2, 2, 2, 2);
             btnSave.Name = "btnSave";
-            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnSave.Size = new Size(141, 45);
+            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnSave.Size = new Size(108, 35);
             btnSave.TabIndex = 11;
             btnSave.Text = "Lưu";
             btnSave.Click += btnSave_Click;
@@ -96,7 +120,7 @@ namespace NewsApp.UI
             // btnUploadAvatar
             // 
             btnUploadAvatar.BorderRadius = 5;
-            btnUploadAvatar.CustomizableEdges = customizableEdges3;
+            btnUploadAvatar.CustomizableEdges = customizableEdges5;
             btnUploadAvatar.DisabledState.BorderColor = Color.DarkGray;
             btnUploadAvatar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnUploadAvatar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -104,10 +128,11 @@ namespace NewsApp.UI
             btnUploadAvatar.FillColor = Color.Gray;
             btnUploadAvatar.Font = new Font("Segoe UI", 10F);
             btnUploadAvatar.ForeColor = Color.White;
-            btnUploadAvatar.Location = new Point(164, 341);
+            btnUploadAvatar.Location = new Point(126, 266);
+            btnUploadAvatar.Margin = new Padding(2, 2, 2, 2);
             btnUploadAvatar.Name = "btnUploadAvatar";
-            btnUploadAvatar.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnUploadAvatar.Size = new Size(141, 45);
+            btnUploadAvatar.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnUploadAvatar.Size = new Size(108, 35);
             btnUploadAvatar.TabIndex = 10;
             btnUploadAvatar.Text = "Up Ảnh";
             btnUploadAvatar.Click += btnUploadAvatar_Click;
@@ -115,7 +140,7 @@ namespace NewsApp.UI
             // btnLogout
             // 
             btnLogout.BorderRadius = 5;
-            btnLogout.CustomizableEdges = customizableEdges5;
+            btnLogout.CustomizableEdges = customizableEdges7;
             btnLogout.DisabledState.BorderColor = Color.DarkGray;
             btnLogout.DisabledState.CustomBorderColor = Color.DarkGray;
             btnLogout.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -123,10 +148,11 @@ namespace NewsApp.UI
             btnLogout.FillColor = Color.Firebrick;
             btnLogout.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnLogout.ForeColor = Color.White;
-            btnLogout.Location = new Point(407, 867);
+            btnLogout.Location = new Point(313, 711);
+            btnLogout.Margin = new Padding(2, 2, 2, 2);
             btnLogout.Name = "btnLogout";
-            btnLogout.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnLogout.Size = new Size(211, 64);
+            btnLogout.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnLogout.Size = new Size(162, 50);
             btnLogout.TabIndex = 9;
             btnLogout.Text = "Đăng xuất";
             btnLogout.Click += btnLogout_Click;
@@ -134,7 +160,7 @@ namespace NewsApp.UI
             // btnBack
             // 
             btnBack.BorderRadius = 5;
-            btnBack.CustomizableEdges = customizableEdges7;
+            btnBack.CustomizableEdges = customizableEdges9;
             btnBack.DisabledState.BorderColor = Color.DarkGray;
             btnBack.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBack.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -142,10 +168,11 @@ namespace NewsApp.UI
             btnBack.FillColor = Color.Gray;
             btnBack.Font = new Font("Segoe UI", 10F);
             btnBack.ForeColor = Color.White;
-            btnBack.Location = new Point(115, 867);
+            btnBack.Location = new Point(88, 711);
+            btnBack.Margin = new Padding(2, 2, 2, 2);
             btnBack.Name = "btnBack";
-            btnBack.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnBack.Size = new Size(211, 64);
+            btnBack.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnBack.Size = new Size(162, 50);
             btnBack.TabIndex = 8;
             btnBack.Text = "Đóng";
             btnBack.Click += btnBack_Click;
@@ -153,7 +180,7 @@ namespace NewsApp.UI
             // txtEmail
             // 
             txtEmail.BorderRadius = 5;
-            txtEmail.CustomizableEdges = customizableEdges9;
+            txtEmail.CustomizableEdges = customizableEdges11;
             txtEmail.DefaultText = "";
             txtEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -161,14 +188,14 @@ namespace NewsApp.UI
             txtEmail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtEmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtEmail.Font = new Font("Segoe UI", 10F);
-            txtEmail.Location = new Point(115, 765);
-            txtEmail.Margin = new Padding(6, 6, 6, 6);
+            txtEmail.Location = new Point(88, 598);
+            txtEmail.Margin = new Padding(5, 5, 5, 5);
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "";
             txtEmail.ReadOnly = true;
             txtEmail.SelectedText = "";
-            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            txtEmail.Size = new Size(504, 56);
+            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            txtEmail.Size = new Size(388, 44);
             txtEmail.TabIndex = 7;
             // 
             // label3
@@ -176,16 +203,17 @@ namespace NewsApp.UI
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             label3.ForeColor = SystemColors.HotTrack;
-            label3.Location = new Point(115, 702);
+            label3.Location = new Point(88, 548);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(103, 41);
+            label3.Size = new Size(75, 30);
             label3.TabIndex = 6;
             label3.Text = "Email:";
             // 
             // txtRole
             // 
             txtRole.BorderRadius = 5;
-            txtRole.CustomizableEdges = customizableEdges11;
+            txtRole.CustomizableEdges = customizableEdges13;
             txtRole.DefaultText = "";
             txtRole.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtRole.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -193,14 +221,14 @@ namespace NewsApp.UI
             txtRole.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtRole.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtRole.Font = new Font("Segoe UI", 10F);
-            txtRole.Location = new Point(115, 629);
-            txtRole.Margin = new Padding(6, 6, 6, 6);
+            txtRole.Location = new Point(88, 491);
+            txtRole.Margin = new Padding(5, 5, 5, 5);
             txtRole.Name = "txtRole";
             txtRole.PlaceholderText = "";
             txtRole.ReadOnly = true;
             txtRole.SelectedText = "";
-            txtRole.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            txtRole.Size = new Size(504, 56);
+            txtRole.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            txtRole.Size = new Size(388, 44);
             txtRole.TabIndex = 5;
             // 
             // label2
@@ -208,16 +236,17 @@ namespace NewsApp.UI
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             label2.ForeColor = SystemColors.HotTrack;
-            label2.Location = new Point(115, 566);
+            label2.Location = new Point(88, 442);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(119, 41);
+            label2.Size = new Size(87, 30);
             label2.TabIndex = 4;
             label2.Text = "Vai trò:";
             // 
             // txtFullName
             // 
             txtFullName.BorderRadius = 5;
-            txtFullName.CustomizableEdges = customizableEdges13;
+            txtFullName.CustomizableEdges = customizableEdges15;
             txtFullName.DefaultText = "";
             txtFullName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtFullName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -225,14 +254,14 @@ namespace NewsApp.UI
             txtFullName.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtFullName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtFullName.Font = new Font("Segoe UI", 10F);
-            txtFullName.Location = new Point(115, 489);
-            txtFullName.Margin = new Padding(6, 6, 6, 6);
+            txtFullName.Location = new Point(88, 382);
+            txtFullName.Margin = new Padding(5, 5, 5, 5);
             txtFullName.Name = "txtFullName";
             txtFullName.PlaceholderText = "";
             txtFullName.ReadOnly = true;
             txtFullName.SelectedText = "";
-            txtFullName.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            txtFullName.Size = new Size(504, 56);
+            txtFullName.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            txtFullName.Size = new Size(388, 44);
             txtFullName.TabIndex = 3;
             // 
             // label1
@@ -240,9 +269,10 @@ namespace NewsApp.UI
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             label1.ForeColor = SystemColors.HotTrack;
-            label1.Location = new Point(115, 430);
+            label1.Location = new Point(88, 336);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(164, 41);
+            label1.Size = new Size(121, 30);
             label1.TabIndex = 2;
             label1.Text = "Họ và Tên:";
             // 
@@ -250,9 +280,10 @@ namespace NewsApp.UI
             // 
             labelUserName.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             labelUserName.ForeColor = Color.DimGray;
-            labelUserName.Location = new Point(-8, 250);
+            labelUserName.Location = new Point(-6, 195);
+            labelUserName.Margin = new Padding(2, 0, 2, 0);
             labelUserName.Name = "labelUserName";
-            labelUserName.Size = new Size(731, 48);
+            labelUserName.Size = new Size(562, 38);
             labelUserName.TabIndex = 1;
             labelUserName.Text = "@username";
             labelUserName.TextAlign = ContentAlignment.MiddleCenter;
@@ -260,25 +291,27 @@ namespace NewsApp.UI
             // picBoxProfileAvatar
             // 
             picBoxProfileAvatar.BorderRadius = 60;
-            picBoxProfileAvatar.CustomizableEdges = customizableEdges15;
+            picBoxProfileAvatar.CustomizableEdges = customizableEdges17;
             picBoxProfileAvatar.FillColor = Color.Silver;
             picBoxProfileAvatar.ImageRotate = 0F;
-            picBoxProfileAvatar.Location = new Point(262, 21);
+            picBoxProfileAvatar.Location = new Point(202, 16);
+            picBoxProfileAvatar.Margin = new Padding(2, 2, 2, 2);
             picBoxProfileAvatar.Name = "picBoxProfileAvatar";
-            picBoxProfileAvatar.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            picBoxProfileAvatar.Size = new Size(195, 192);
+            picBoxProfileAvatar.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            picBoxProfileAvatar.Size = new Size(150, 150);
             picBoxProfileAvatar.SizeMode = PictureBoxSizeMode.Zoom;
             picBoxProfileAvatar.TabIndex = 0;
             picBoxProfileAvatar.TabStop = false;
             // 
             // ProfileForm
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new Size(726, 997);
+            ClientSize = new Size(558, 779);
             Controls.Add(guna2Panel1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(2, 2, 2, 2);
             MaximizeBox = false;
             Name = "ProfileForm";
             StartPosition = FormStartPosition.CenterScreen;
@@ -305,5 +338,6 @@ namespace NewsApp.UI
         private Guna.UI2.WinForms.Guna2Button btnLogout;
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2Button btnUploadAvatar;
+        private Guna.UI2.WinForms.Guna2Button btnChangePassword; // Khai báo nút mới
     }
 }

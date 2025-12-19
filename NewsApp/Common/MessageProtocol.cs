@@ -24,6 +24,8 @@ namespace NewsApp.Common
             public const string SEARCH_ARTICLES = "SEARCH_ARTICLES";
             public const string GET_COMMENTS = "GET_COMMENTS";
 
+            public const string CHANGE_PASSWORD = "CHANGE_PASSWORD";
+
 
             // Admin Commands
             public const string GET_ALL_USERS = "GET_ALL_USERS";
@@ -75,6 +77,9 @@ namespace NewsApp.Common
 
             public const string GET_COMMENTS_SUCCESS = "GET_COMMENTS_SUCCESS";
             public const string GET_COMMENTS_FAIL = "GET_COMMENTS_FAIL";
+
+            public const string CHANGE_PASSWORD_SUCCESS = "CHANGE_PASSWORD_SUCCESS";
+            public const string CHANGE_PASSWORD_FAIL = "CHANGE_PASSWORD_FAIL";
 
 
 

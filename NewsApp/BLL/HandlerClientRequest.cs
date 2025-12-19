@@ -129,11 +129,9 @@ namespace NewsApp.BLL
                     {
                         Account? account = JsonSerializer.Deserialize<Account>(payload);
 
-                        // --- BẮT ĐẦU SỬA ĐỔI ---
                         if (account != null)
                         {
-                            // Băm mật khẩu người dùng vừa nhập thành mã hóa (ví dụ: "123" -> "a665a4...")
-                            // Sau đó hàm Login bên dưới sẽ so sánh chuỗi mã hóa này với chuỗi trong Database
+
                             account.Password = HashHelper.Hash(account.Password);
 
                             if (_accountRepository.Login(account))
@@ -157,7 +155,6 @@ namespace NewsApp.BLL
                                     User? user = _userRepository.GetByAccountID(accDetails.AccountID);
                                     if (user != null)
                                     {
-                                        // Thêm user vào danh sách online
                                         _serverSocket.AddUser(account.Username, _client);
                                         _currentUsername = account.Username;
 
@@ -172,9 +169,7 @@ namespace NewsApp.BLL
                                 }
                             }
                         }
-                        // --- KẾT THÚC SỬA ĐỔI ---
 
-                        // Nếu code chạy xuống đây nghĩa là: account bị null HOẶC Login thất bại
                         Packet loginFailResponse = new(
                             MessageProtocol.ResponseCommand.LOGIN_FAIL,
                             (object)"Sai tài khoản hoặc mật khẩu"
@@ -674,10 +669,8 @@ namespace NewsApp.BLL
                     {
                         try
                         {
-                            // 1. Gọi Repository để lấy danh sách bài có Status = 0
                             List<Article> pendingList = _articleRepository.GetPendingArticles();
 
-                            // 2. Gửi phản hồi thành công kèm dữ liệu
                             Packet response = new(
                                 MessageProtocol.ResponseCommand.GET_PENDING_ARTICLES_SUCCESS,
                                 pendingList
@@ -696,15 +689,12 @@ namespace NewsApp.BLL
                     }
                     break;
 
-                // --- CASE: DUYỆT BÀI VIẾT (ĐỔI STATUS TỪ 0 -> 1) ---
                 case MessageProtocol.RequestCommand.APPROVE_ARTICLE:
                     {
                         try
                         {
-                            // 1. Giải mã Payload để lấy ArticleID (dạng int)
                             int articleId = JsonSerializer.Deserialize<int>(payload);
 
-                            // 2. Gọi Repository để thực hiện update
                             bool isApproved = _articleRepository.ApproveArticle(articleId);
 
                             if (isApproved)
@@ -768,6 +758,54 @@ namespace NewsApp.BLL
                     }
                     break;
 
+                case MessageProtocol.RequestCommand.CHANGE_PASSWORD:
+                    {
+                        try
+                        {
+                            var changePassModel = JsonSerializer.Deserialize<ChangePasswordModel>(payload);
+                            if (changePassModel != null)
+                            {
+                                string hashedOldPass = HashHelper.Hash(changePassModel.OldPassword);
+
+                                if (_accountRepository.VerifyPassword(changePassModel.Username, hashedOldPass))
+                                {
+                                    string hashedNewPass = HashHelper.Hash(changePassModel.NewPassword);
+
+                                    if (_accountRepository.UpdatePassword(changePassModel.Username, hashedNewPass))
+                                    {
+                                        Packet success = new(
+                                            MessageProtocol.ResponseCommand.CHANGE_PASSWORD_SUCCESS,
+                                            "Đổi mật khẩu thành công!"
+                                        );
+                                        _streamWriter.WriteLine(JsonSerializer.Serialize(success));
+                                    }
+                                    else
+                                    {
+                                        Packet fail = new(
+                                            MessageProtocol.ResponseCommand.CHANGE_PASSWORD_FAIL,
+                                            "Lỗi hệ thống: Không thể cập nhật mật khẩu."
+                                        );
+                                        _streamWriter.WriteLine(JsonSerializer.Serialize(fail));
+                                    }
+                                }
+                                else
+                                {
+                                    Packet fail = new(
+                                        MessageProtocol.ResponseCommand.CHANGE_PASSWORD_FAIL,
+                                        "Mật khẩu cũ không chính xác."
+                                    );
+                                    _streamWriter.WriteLine(JsonSerializer.Serialize(fail));
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            _serverSocket.Log($"Error Change Password: {ex.Message}");
+                            Packet error = new(MessageProtocol.ResponseCommand.CHANGE_PASSWORD_FAIL, "Lỗi xử lý tại Server");
+                            _streamWriter.WriteLine(JsonSerializer.Serialize(error));
+                        }
+                    }
+                    break;
 
                 default:
                     break;
