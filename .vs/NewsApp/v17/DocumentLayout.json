@@ -1,18 +1,110 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ABC\\OneDrive\\Documents\\DemoDoAn\\",
+  "WorkspaceRootPath": "C:\\Users\\ABC\\Downloads\\NewsApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A5B6D9F2-9323-45E2-A51E-A0FC8CC689AC}|NewsApp\\NewsApp.csproj|c:\\users\\abc\\onedrive\\documents\\demodoan\\newsapp\\bll\\network\\serversocket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A5B6D9F2-9323-45E2-A51E-A0FC8CC689AC}|NewsApp\\NewsApp.csproj|solutionrelative:newsapp\\bll\\network\\serversocket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|c:\\users\\abc\\downloads\\newsapp\\bll\\network\\serversocket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:bll\\network\\serversocket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A5B6D9F2-9323-45E2-A51E-A0FC8CC689AC}|NewsApp\\NewsApp.csproj|c:\\users\\abc\\onedrive\\documents\\demodoan\\newsapp\\bll\\network\\clientsocket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A5B6D9F2-9323-45E2-A51E-A0FC8CC689AC}|NewsApp\\NewsApp.csproj|solutionrelative:newsapp\\bll\\network\\clientsocket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|c:\\users\\abc\\downloads\\newsapp\\bll\\network\\clientsocket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:bll\\network\\clientsocket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A5B6D9F2-9323-45E2-A51E-A0FC8CC689AC}|NewsApp\\NewsApp.csproj|c:\\users\\abc\\onedrive\\documents\\demodoan\\newsapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A5B6D9F2-9323-45E2-A51E-A0FC8CC689AC}|NewsApp\\NewsApp.csproj|solutionrelative:newsapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|c:\\users\\abc\\downloads\\newsapp\\dal\\accountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:dal\\accountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|c:\\users\\abc\\downloads\\newsapp\\bll\\handlerclientrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:bll\\handlerclientrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|c:\\users\\abc\\downloads\\newsapp\\bll\\mailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:bll\\mailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|c:\\users\\abc\\downloads\\newsapp\\common\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:common\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|c:\\users\\abc\\downloads\\newsapp\\common\\resetpasswordmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:common\\resetpasswordmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|c:\\users\\abc\\downloads\\newsapp\\common\\hashhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:common\\hashhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|c:\\users\\abc\\downloads\\newsapp\\bll\\otpmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:bll\\otpmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|c:\\users\\abc\\downloads\\newsapp\\bll\\articleservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:bll\\articleservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|C:\\Users\\ABC\\Downloads\\NewsApp\\ui\\forgotpasswordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:ui\\forgotpasswordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|c:\\users\\abc\\downloads\\newsapp\\ui\\forgotpasswordform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:ui\\forgotpasswordform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|c:\\users\\abc\\downloads\\newsapp\\ui\\forgotpasswordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:ui\\forgotpasswordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|c:\\users\\abc\\downloads\\newsapp\\bll\\accountservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:bll\\accountservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|c:\\users\\abc\\downloads\\newsapp\\ui\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:ui\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|C:\\Users\\ABC\\Downloads\\NewsApp\\ui\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:ui\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|C:\\Users\\ABC\\Downloads\\NewsApp\\ui\\newarticelform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:ui\\newarticelform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|C:\\Users\\ABC\\Downloads\\NewsApp\\ui\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:ui\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|c:\\users\\abc\\downloads\\newsapp\\dal\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:dal\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|c:\\users\\abc\\downloads\\newsapp\\dal\\databasehepper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:dal\\databasehepper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|c:\\users\\abc\\downloads\\newsapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|c:\\users\\abc\\downloads\\newsapp\\data\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:data\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|c:\\users\\abc\\downloads\\newsapp\\dal\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:dal\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|c:\\users\\abc\\downloads\\newsapp\\common\\messageprotocol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:common\\messageprotocol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|c:\\users\\abc\\downloads\\newsapp\\bll\\categoryservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:bll\\categoryservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|c:\\users\\abc\\downloads\\newsapp\\bll\\adminservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54163144-BE08-0EA4-016B-A044EB6EFB36}|NewsApp.csproj|solutionrelative:bll\\adminservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,34 +113,277 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 1268,
+          "SelectedChildIndex": 13,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RegisterModel.cs",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\Common\\RegisterModel.cs",
+              "RelativeDocumentMoniker": "Common\\RegisterModel.cs",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\Common\\RegisterModel.cs",
+              "RelativeToolTip": "Common\\RegisterModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T09:46:34.157Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OtpManager.cs",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\BLL\\OtpManager.cs",
+              "RelativeDocumentMoniker": "BLL\\OtpManager.cs",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\BLL\\OtpManager.cs",
+              "RelativeToolTip": "BLL\\OtpManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T09:43:01.709Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ResetPasswordModel.cs",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\Common\\ResetPasswordModel.cs",
+              "RelativeDocumentMoniker": "Common\\ResetPasswordModel.cs",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\Common\\ResetPasswordModel.cs",
+              "RelativeToolTip": "Common\\ResetPasswordModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T09:42:56.98Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "HashHelper.cs",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\Common\\HashHelper.cs",
+              "RelativeDocumentMoniker": "Common\\HashHelper.cs",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\Common\\HashHelper.cs",
+              "RelativeToolTip": "Common\\HashHelper.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T09:42:47.675Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ForgotPasswordForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\UI\\ForgotPasswordForm.Designer.cs",
+              "RelativeDocumentMoniker": "UI\\ForgotPasswordForm.Designer.cs",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\UI\\ForgotPasswordForm.Designer.cs",
+              "RelativeToolTip": "UI\\ForgotPasswordForm.Designer.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAwwFwAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T04:18:53.308Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ArticleServices.cs",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\BLL\\ArticleServices.cs",
+              "RelativeDocumentMoniker": "BLL\\ArticleServices.cs",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\BLL\\ArticleServices.cs",
+              "RelativeToolTip": "BLL\\ArticleServices.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAewCcAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T04:06:37.112Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ForgotPasswordForm.cs",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\UI\\ForgotPasswordForm.cs",
+              "RelativeDocumentMoniker": "UI\\ForgotPasswordForm.cs",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\UI\\ForgotPasswordForm.cs",
+              "RelativeToolTip": "UI\\ForgotPasswordForm.cs",
+              "ViewState": "AgIAABEBAAAAAAAAAAAowBkBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T04:02:15.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MailService.cs",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\BLL\\MailService.cs",
+              "RelativeDocumentMoniker": "BLL\\MailService.cs",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\BLL\\MailService.cs",
+              "RelativeToolTip": "BLL\\MailService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T13:59:34.648Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\Data\\User.cs",
+              "RelativeDocumentMoniker": "Data\\User.cs",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\Data\\User.cs",
+              "RelativeToolTip": "Data\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T13:03:00.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\DAL\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\BaseRepository.cs",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\DAL\\BaseRepository.cs",
+              "RelativeToolTip": "DAL\\BaseRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T12:53:53.573Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\DAL\\UserRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\DAL\\UserRepository.cs",
+              "RelativeToolTip": "DAL\\UserRepository.cs",
+              "ViewState": "AgIAAPwAAAAAAAAAAAAgwOUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T12:46:58.73Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "CategoryServices.cs",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\BLL\\CategoryServices.cs",
+              "RelativeDocumentMoniker": "BLL\\CategoryServices.cs",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\BLL\\CategoryServices.cs",
+              "RelativeToolTip": "BLL\\CategoryServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T10:21:05.387Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "AdminServices.cs",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\BLL\\AdminServices.cs",
+              "RelativeDocumentMoniker": "BLL\\AdminServices.cs",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\BLL\\AdminServices.cs",
+              "RelativeToolTip": "BLL\\AdminServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T10:21:04.704Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ServerSocket.cs",
-              "DocumentMoniker": "C:\\Users\\ABC\\OneDrive\\Documents\\DemoDoAn\\NewsApp\\BLL\\Network\\ServerSocket.cs",
-              "RelativeDocumentMoniker": "NewsApp\\BLL\\Network\\ServerSocket.cs",
-              "ToolTip": "C:\\Users\\ABC\\OneDrive\\Documents\\DemoDoAn\\NewsApp\\BLL\\Network\\ServerSocket.cs",
-              "RelativeToolTip": "NewsApp\\BLL\\Network\\ServerSocket.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAwwCwAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\BLL\\Network\\ServerSocket.cs",
+              "RelativeDocumentMoniker": "BLL\\Network\\ServerSocket.cs",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\BLL\\Network\\ServerSocket.cs",
+              "RelativeToolTip": "BLL\\Network\\ServerSocket.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAEwCgAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-20T10:13:42.461Z",
+              "WhenOpened": "2025-12-19T10:21:03.924Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAACAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-19T10:06:56.069Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\UI\\LoginForm.cs",
+              "RelativeDocumentMoniker": "UI\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\UI\\LoginForm.cs",
+              "RelativeToolTip": "UI\\LoginForm.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAWwGEAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T09:27:20.526Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "ClientSocket.cs",
-              "DocumentMoniker": "C:\\Users\\ABC\\OneDrive\\Documents\\DemoDoAn\\NewsApp\\BLL\\Network\\ClientSocket.cs",
-              "RelativeDocumentMoniker": "NewsApp\\BLL\\Network\\ClientSocket.cs",
-              "ToolTip": "C:\\Users\\ABC\\OneDrive\\Documents\\DemoDoAn\\NewsApp\\BLL\\Network\\ClientSocket.cs",
-              "RelativeToolTip": "NewsApp\\BLL\\Network\\ClientSocket.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\BLL\\Network\\ClientSocket.cs",
+              "RelativeDocumentMoniker": "BLL\\Network\\ClientSocket.cs",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\BLL\\Network\\ClientSocket.cs",
+              "RelativeToolTip": "BLL\\Network\\ClientSocket.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAHAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-20T10:12:52.701Z",
+              "WhenOpened": "2025-12-19T09:03:35.454Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "DatabaseHepper.cs",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\DAL\\DatabaseHepper.cs",
+              "RelativeDocumentMoniker": "DAL\\DatabaseHepper.cs",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\DAL\\DatabaseHepper.cs",
+              "RelativeToolTip": "DAL\\DatabaseHepper.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAMwA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T08:46:01.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccountRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\DAL\\AccountRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\AccountRepository.cs",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\DAL\\AccountRepository.cs",
+              "RelativeToolTip": "DAL\\AccountRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T08:43:22.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "MessageProtocol.cs",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\Common\\MessageProtocol.cs",
+              "RelativeDocumentMoniker": "Common\\MessageProtocol.cs",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\Common\\MessageProtocol.cs",
+              "RelativeToolTip": "Common\\MessageProtocol.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAA1wC4AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T08:40:13.018Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HandlerClientRequest.cs",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\BLL\\HandlerClientRequest.cs",
+              "RelativeDocumentMoniker": "BLL\\HandlerClientRequest.cs",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\BLL\\HandlerClientRequest.cs",
+              "RelativeToolTip": "BLL\\HandlerClientRequest.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAAwIcAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T03:24:23.039Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AccountServices.cs",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\BLL\\AccountServices.cs",
+              "RelativeDocumentMoniker": "BLL\\AccountServices.cs",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\BLL\\AccountServices.cs",
+              "RelativeToolTip": "BLL\\AccountServices.cs",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAqwLwAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T03:24:21.138Z"
             },
             {
               "$type": "Bookmark",
@@ -56,16 +391,47 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\ABC\\OneDrive\\Documents\\DemoDoAn\\NewsApp\\appsettings.json",
-              "RelativeDocumentMoniker": "NewsApp\\appsettings.json",
-              "ToolTip": "C:\\Users\\ABC\\OneDrive\\Documents\\DemoDoAn\\NewsApp\\appsettings.json",
-              "RelativeToolTip": "NewsApp\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-14T13:10:46.061Z",
-              "EditorCaption": ""
+              "DocumentIndex": 10,
+              "Title": "ForgotPasswordForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\UI\\ForgotPasswordForm.cs",
+              "RelativeDocumentMoniker": "UI\\ForgotPasswordForm.cs",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\UI\\ForgotPasswordForm.cs [Design]",
+              "RelativeToolTip": "UI\\ForgotPasswordForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T03:43:10.838Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "NewArticelForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\UI\\NewArticelForm.cs",
+              "RelativeDocumentMoniker": "UI\\NewArticelForm.cs",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\UI\\NewArticelForm.cs [Design]",
+              "RelativeToolTip": "UI\\NewArticelForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T03:26:48.932Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "RegisterForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\UI\\RegisterForm.cs",
+              "RelativeDocumentMoniker": "UI\\RegisterForm.cs",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\UI\\RegisterForm.cs [Design]",
+              "RelativeToolTip": "UI\\RegisterForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T03:21:22.869Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "LoginForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ABC\\Downloads\\NewsApp\\UI\\LoginForm.cs",
+              "RelativeDocumentMoniker": "UI\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\ABC\\Downloads\\NewsApp\\UI\\LoginForm.cs [Design]",
+              "RelativeToolTip": "UI\\LoginForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T09:26:32.42Z"
             }
           ]
         }
