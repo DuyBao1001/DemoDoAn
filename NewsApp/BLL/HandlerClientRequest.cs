@@ -19,7 +19,7 @@ namespace NewsApp.BLL
         private bool isConnected = true;
         private readonly IAccountRepository _accountRepository;
         private readonly ArticleRepository _articleRepository;
-        private AccountRepository _accountRepo = new AccountRepository();
+        //private AccountRepository _accountRepo = new AccountRepository();
         private readonly UserRepository _userRepository;
         private readonly CategoryRepository _categoryRepository;
         private readonly CommentRepository _commentRepository;
@@ -139,7 +139,7 @@ namespace NewsApp.BLL
                                 break;
                             }
 
-                            if (_accountRepo.CheckEmailExists(emailFromClient))
+                            if (_accountRepository.CheckEmailExists(emailFromClient))
                             {
                                 string otp = new Random().Next(100000, 999999).ToString();
                                 OtpManager.SaveOtp(emailFromClient, otp);
@@ -173,7 +173,7 @@ namespace NewsApp.BLL
                             if (OtpManager.VerifyOtp(resetData.Email, resetData.OTP))
                             {
                                 string hashedPassword = resetData.NewPassword;
-                                _accountRepo.ResetPassword(resetData.Email, hashedPassword);
+                                _accountRepository.ResetPassword(resetData.Email, hashedPassword);
 
                                 SendResponse(MessageProtocol.ResponseCommand.RESET_PASSWORD_SUCCESS, "Thành công.");
                             }
@@ -483,7 +483,6 @@ namespace NewsApp.BLL
                     );
                     _streamWriter.WriteLine(JsonSerializer.Serialize(usersResponse));
                     break;
-
                 case MessageProtocol.RequestCommand.DELETE_USER:
                     try
                     {
@@ -523,7 +522,6 @@ namespace NewsApp.BLL
                     }
                     catch { }
                     break;
-
                 case MessageProtocol.RequestCommand.DELETE_ARTICLE:
                     try
                     {
@@ -566,7 +564,6 @@ namespace NewsApp.BLL
                     }
                     catch { }
                     break;
-
                 case MessageProtocol.RequestCommand.ADD_CATEGORY:
                     try
                     {
@@ -599,7 +596,6 @@ namespace NewsApp.BLL
                     }
                     catch { }
                     break;
-
                 case MessageProtocol.RequestCommand.UPDATE_CATEGORY:
                     try
                     {
@@ -643,7 +639,6 @@ namespace NewsApp.BLL
                     }
                     catch { }
                     break;
-
                 case MessageProtocol.RequestCommand.DELETE_CATEGORY:
                     try
                     {
@@ -680,7 +675,6 @@ namespace NewsApp.BLL
                     }
                     catch { }
                     break;
-
                 case MessageProtocol.RequestCommand.POST_ARTICLE:
                     try
                     {
@@ -753,7 +747,6 @@ namespace NewsApp.BLL
                         }
                     }
                     break;
-
                 case MessageProtocol.RequestCommand.APPROVE_ARTICLE:
                     {
                         try
@@ -821,7 +814,6 @@ namespace NewsApp.BLL
                         }
                     }
                     break;
-
                 case MessageProtocol.RequestCommand.CHANGE_PASSWORD:
                     {
                         try
@@ -870,7 +862,6 @@ namespace NewsApp.BLL
                         }
                     }
                     break;
-
                 default:
                     break;
             }

@@ -106,7 +106,7 @@ namespace NewsApp.DAL
                 String query = "INSERT INTO Account (UserName, Password) VALUES (@userName, @password)";
                 SqlCommand command = new(query, connection);
                 command.Parameters.AddWithValue("@userName", account.Username);
-                command.Parameters.AddWithValue("@password", passwordHash);
+                command.Parameters.AddWithValue("@password", account.Password);
                 connection.Open();
                 return command.ExecuteNonQuery() > 0;
             }
