@@ -28,7 +28,6 @@ namespace NewsApp.Network
             _client = new TcpClient();
         }
 
-
         public void Start()
         {
             try
@@ -103,6 +102,7 @@ namespace NewsApp.Network
                 ErrorData?.Invoke("Dữ liệu không hợp lệ" + e.Message);
             }
         }
+
         public void Disconnect()
         {
             isConnected = false;

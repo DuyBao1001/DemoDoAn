@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using NewsApp.Common;
 using NewsApp.Data;
 
 namespace NewsApp.DAL
@@ -76,6 +77,9 @@ namespace NewsApp.DAL
             try
             {
                 using SqlConnection connection = GetConnection();
+                // Mã hóa mật khẩu nhập vào trước khi so sánh với DB
+                string passwordHash = HashHelper.Hash(account.Password);
+
                 String query = "SELECT UserName FROM Account WHERE UserName = @userName AND Password = @password";
                 SqlCommand command = new(query, connection);
                 command.Parameters.AddWithValue("@userName", account.Username);
@@ -96,10 +100,13 @@ namespace NewsApp.DAL
             try
             {
                 using SqlConnection connection = GetConnection();
+
+                string passwordHash = HashHelper.Hash(account.Password);
+
                 String query = "INSERT INTO Account (UserName, Password) VALUES (@userName, @password)";
                 SqlCommand command = new(query, connection);
                 command.Parameters.AddWithValue("@userName", account.Username);
-                command.Parameters.AddWithValue("@password", account.Password);
+                command.Parameters.AddWithValue("@password", passwordHash);
                 connection.Open();
                 return command.ExecuteNonQuery() > 0;
             }
@@ -176,6 +183,23 @@ namespace NewsApp.DAL
             }
         }
 
+        public bool CheckEmailExists(string email)
+        {
+
+            string query = "SELECT COUNT(*) FROM [User] WHERE LTRIM(RTRIM(Email)) = @Email";
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@Email", System.Data.SqlDbType.NVarChar) { Value = email.Trim() }
+            };
+
+
+            object result = DatabaseHepper.ExecuteScalar(query, parameters);
+
+            return Convert.ToInt32(result) > 0;
+        }
+
+
         public bool UpdatePassword(string username, string newPassword)
         {
             try
@@ -183,7 +207,7 @@ namespace NewsApp.DAL
                 using SqlConnection connection = GetConnection();
                 string query = "UPDATE Account SET Password = @password WHERE UserName = @userName";
                 SqlCommand command = new(query, connection);
-                command.Parameters.AddWithValue("@password", newPassword); 
+                command.Parameters.AddWithValue("@password", newPassword);
                 command.Parameters.AddWithValue("@userName", username);
 
                 connection.Open();
@@ -196,6 +220,40 @@ namespace NewsApp.DAL
             }
         }
 
+        public bool ResetPassword(string email, string newPasswordPlain)
+        {
+            try
+            {
+                string passwordHash = HashHelper.Hash(newPasswordPlain);
+
+                string cleanEmail = email.Trim();
+
+
+                string query = @"
+                    UPDATE Account 
+                    SET Password = @Password 
+                    FROM Account A
+                    INNER JOIN [User] U ON A.AccountID = U.AccountID
+                    WHERE U.Email = @Email";
+
+                SqlParameter[] parameters = new SqlParameter[]
+                {
+                    new SqlParameter("@Email", cleanEmail),
+                    new SqlParameter("@Password", passwordHash)
+                };
+
+                int rowsAffected = DatabaseHepper.ExecuteNonQuery(query, parameters);
+
+                Console.WriteLine($"Đổi mật khẩu cho email {cleanEmail}: {rowsAffected} dòng thay đổi.");
+
+                return rowsAffected > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi UpdatePassword: " + ex.Message);
+                return false;
+            }
+        }
         public bool VerifyPassword(string username, string password)
         {
             try
@@ -204,7 +262,7 @@ namespace NewsApp.DAL
                 string query = "SELECT COUNT(1) FROM Account WHERE UserName = @u AND Password = @p";
                 SqlCommand command = new(query, connection);
                 command.Parameters.AddWithValue("@u", username);
-                command.Parameters.AddWithValue("@p", password); 
+                command.Parameters.AddWithValue("@p", password);
 
                 connection.Open();
                 int count = (int)command.ExecuteScalar();

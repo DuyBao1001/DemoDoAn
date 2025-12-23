@@ -34,12 +34,11 @@ namespace NewsApp.UI
 
             if (success)
             {
-                this.DialogResult = DialogResult.OK; 
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
         }
 
-        // Event handler khi form load
         private void ProfileForm_Load(object sender, EventArgs e)
         {
             if (User == null)
@@ -92,7 +91,6 @@ namespace NewsApp.UI
                 {
                     using (MemoryStream ms = new MemoryStream(User.Avatar))
                     {
-                        //Phải tạo new Bitmap để copy dữ liệu ra khỏi stream
                         picBoxProfileAvatar.Image = new Bitmap(Image.FromStream(ms));
                     }
                 }
@@ -115,20 +113,15 @@ namespace NewsApp.UI
             {
                 try
                 {
-                    //Tạo Bitmap mới từ file để không bị lock file gốc
                     Bitmap newAvatar;
                     using (var stream = new FileStream(open.FileName, FileMode.Open, FileAccess.Read))
                     {
                         newAvatar = new Bitmap(stream);
                     }
-
-                    //Gán vào PictureBox
                     picBoxProfileAvatar.Image = newAvatar;
 
-                    //Lưu vào User Object (Chuyển thành byte[])
                     using (MemoryStream ms = new MemoryStream())
                     {
-                        // Lưu dưới dạng PNG hoặc JPEG để tối ưu dung lượng
                         newAvatar.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
                         User.Avatar = ms.ToArray();
                     }
@@ -157,7 +150,7 @@ namespace NewsApp.UI
                 DialogResult result = MessageBox.Show("Đổi mật khẩu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (result == DialogResult.OK)
                 {
-                    this.Close(); 
+                    this.Close();
                 }
             }
         }

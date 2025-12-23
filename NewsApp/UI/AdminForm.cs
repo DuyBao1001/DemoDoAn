@@ -100,7 +100,6 @@ namespace NewsApp.UI
 
             if (selectedArticle != null)
             {
-                // Hàm đúng: Gọi qua _adminServices
                 _adminServices.ApproveArticle(selectedArticle.ArticleID);
             }
         }
@@ -207,7 +206,6 @@ namespace NewsApp.UI
             dgvPendingArticles.DataSource = null;
             dgvPendingArticles.DataSource = articles;
 
-            // Ẩn các cột không cần thiết cho gọn
             if (dgvPendingArticles.Columns["Content"] != null)
                 dgvPendingArticles.Columns["Content"].Visible = false;
             if (dgvPendingArticles.Columns["Image"] != null)
@@ -226,14 +224,11 @@ namespace NewsApp.UI
 
             if (success)
             {
-                // Nếu thành công, tải lại danh sách để bài đó biến mất
                 LoadPendingArticles();
-                // Tải lại cả danh sách bài viết chính để cập nhật
                 LoadArticles();
             }
         }
 
-        // Button event handlers
         private void BtnDeleteUser_Click(object? sender, EventArgs e)
         {
             if (dgvUsers.SelectedRows.Count > 0)
@@ -292,19 +287,16 @@ namespace NewsApp.UI
 
             string categoryName = txtCategoryName.Text.Trim();
 
-            // Check if we're updating an existing category or adding a new one
             if (dgvCategories.SelectedRows.Count > 0)
             {
                 var selectedCategory = dgvCategories.SelectedRows[0].DataBoundItem as Category;
                 if (selectedCategory != null)
                 {
-                    // Update existing category
                     _adminServices.UpdateCategory(selectedCategory.CategoryID, categoryName);
                 }
             }
             else
             {
-                // Add new category
                 _adminServices.AddCategory(categoryName);
             }
         }
@@ -335,6 +327,6 @@ namespace NewsApp.UI
                     txtCategoryName.Text = category.Name;
                 }
             }
-        } 
+        }
     }
 }

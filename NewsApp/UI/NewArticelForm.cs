@@ -21,17 +21,12 @@ namespace NewsApp.UI
             _categoryServices = categoryServices;
             _currentUser = currentUser;
 
-            // Wire up events
             guna2Button1.Click += BtnPost_Click;
             buttonUploadPic.Click += BtnUploadPic_Click;
             buttonDelete.Click += BtnDeletePic_Click;
             _articleServices.DataChanged += OnArticleDataChanged;
             _categoryServices.GetCategoriesResult += OnGetCategoriesResult;
-
-            // Load categories
             _categoryServices.GetCategories();
-
-            // Set PictureBox properties
             guna2PictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
@@ -99,7 +94,6 @@ namespace NewsApp.UI
 
         private void BtnPost_Click(object? sender, EventArgs e)
         {
-            // Validate input
             if (string.IsNullOrWhiteSpace(textBoxTitle.Text))
             {
                 MessageBox.Show(
@@ -133,13 +127,11 @@ namespace NewsApp.UI
                 return;
             }
 
-            // Get form data
             string title = textBoxTitle.Text.Trim();
             int categoryId = (int)guna2ComboBox1.SelectedValue;
             string categoryName = guna2ComboBox1.Text;
             string content = guna2TextBox1.Text.Trim();
 
-            // Post article
             _articleServices.PostArticle(
                 title,
                 categoryId,

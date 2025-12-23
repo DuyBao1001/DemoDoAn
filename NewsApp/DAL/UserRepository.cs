@@ -14,8 +14,13 @@ namespace NewsApp.DAL
         {
             try
             {
+                if (CheckEmailExists(obj.Email))
+                {
+                    Console.WriteLine("Email này đã có người sử dụng!");
+                    return false;
+                }
+
                 using SqlConnection connection = GetConnection();
-                // Thêm cột Avatar vào câu lệnh INSERT
                 string query = "INSERT INTO [User] (FullName, Email, BirthDay, Role, AccountID, Avatar) VALUES (@fullName, @email, @birthDay, @role, @accountId, @avatar)";
 
                 SqlCommand command = new(query, connection);
@@ -25,7 +30,6 @@ namespace NewsApp.DAL
                 command.Parameters.AddWithValue("@role", obj.Role);
                 command.Parameters.AddWithValue("@accountId", obj.AccountID);
 
-                // Xử lý tham số Avatar (có thể null)
                 if (obj.Avatar == null)
                 {
                     command.Parameters.Add("@avatar", SqlDbType.VarBinary, -1).Value = DBNull.Value;
@@ -45,7 +49,6 @@ namespace NewsApp.DAL
             }
         }
 
-        // Đã hiện thực hàm Update để cập nhật thông tin và Avatar
         public override bool Update(User obj)
         {
             try
@@ -66,7 +69,6 @@ namespace NewsApp.DAL
                     command.Parameters.AddWithValue("@birthDay", obj.BirthDay);
                     command.Parameters.AddWithValue("@id", obj.Id);
 
-                    // Xử lý tham số Avatar
                     if (obj.Avatar == null)
                     {
                         command.Parameters.Add("@avatar", SqlDbType.VarBinary, -1).Value = DBNull.Value;
@@ -116,19 +118,19 @@ namespace NewsApp.DAL
                     {
                         try
                         {
-                            // Bước 1: Xóa tất cả Comment của User này trước
+                            //Xóa tất cả Comment của User này trước
                             string queryDelComment = "DELETE FROM [Comment] WHERE UserID = @userId";
                             SqlCommand commandDelComment = new SqlCommand(queryDelComment, connection, tran);
                             commandDelComment.Parameters.AddWithValue("@userId", obj.Id);
                             commandDelComment.ExecuteNonQuery();
 
-                            // Bước 2: Sau đó mới xóa User
+                            //Sau đó mới xóa User
                             string queryUser = "DELETE FROM [User] WHERE UserID = @userId";
                             SqlCommand commandUser = new SqlCommand(queryUser, connection, tran);
                             commandUser.Parameters.AddWithValue("@userId", obj.Id);
                             commandUser.ExecuteNonQuery();
 
-                            // Bước 3: Cuối cùng xóa Account
+                            //Cuối cùng xóa Account
                             string queryAcc = "DELETE FROM Account WHERE AccountID = @accountId";
                             SqlCommand commandAcc = new SqlCommand(queryAcc, connection, tran);
                             commandAcc.Parameters.AddWithValue("@accountId", accountIdToDelete);
@@ -159,7 +161,6 @@ namespace NewsApp.DAL
             try
             {
                 using SqlConnection connection = GetConnection();
-                // Thêm U.Avatar vào SELECT
                 string query = "SELECT U.UserID, FullName, Email, BirthDay, Role, U.AccountID, A.UserName, U.Avatar FROM [User] as U JOIN Account as A ON U.AccountID = A.AccountID";
                 SqlCommand command = new(query, connection);
                 connection.Open();
@@ -175,7 +176,6 @@ namespace NewsApp.DAL
                         Role = reader.GetString(4),
                         AccountID = reader.GetInt32(5),
                         UserName = reader.GetString(6),
-                        // Đọc Avatar (cột thứ 7 - index 7 vì bắt đầu từ 0)
                         Avatar = reader.IsDBNull(7) ? null : (byte[])reader[7]
                     });
                 }
@@ -193,7 +193,6 @@ namespace NewsApp.DAL
             try
             {
                 using SqlConnection connection = GetConnection();
-                // Thêm U.Avatar vào SELECT
                 string query = "SELECT U.UserID, FullName, Email, BirthDay, Role, U.AccountID, A.UserName, U.Avatar FROM [User] as U JOIN Account as A ON U.AccountID = A.AccountID WHERE U.AccountID = @accountId";
                 SqlCommand command = new(query, connection);
                 command.Parameters.AddWithValue("@accountId", accountId);
@@ -210,7 +209,6 @@ namespace NewsApp.DAL
                         Role = reader.GetString(4),
                         AccountID = reader.GetInt32(5),
                         UserName = reader.GetString(6),
-                        // Đọc Avatar
                         Avatar = reader.IsDBNull(7) ? null : (byte[])reader[7]
                     };
                 }
@@ -223,13 +221,31 @@ namespace NewsApp.DAL
             }
         }
 
+        public bool CheckEmailExists(string email)
+        {
+
+            string query = "SELECT COUNT(*) FROM [User] WHERE Email = @Email";
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+
+        new SqlParameter("@Email", System.Data.SqlDbType.NVarChar) { Value = email.Trim() }
+            };
+
+
+            object result = DatabaseHepper.ExecuteScalar(query, parameters);
+
+            int count = Convert.ToInt32(result);
+            Console.WriteLine($"[SQL DEBUG] Tim email: {email} -> Ket qua: {count} dong");
+
+            return count > 0;
+        }
         public override User? GetByID(int id)
         {
             try
             {
                 using (SqlConnection connection = GetConnection())
                 {
-                    // Thêm U.Avatar vào SELECT
                     String query = "SELECT U.UserID, FullName, Email, BirthDay, Role, U.AccountID, A.UserName, U.Avatar FROM [User] as U JOIN Account as A ON U.AccountID = A.AccountID WHERE U.UserID = @userId";
                     SqlCommand command = new(query, connection);
                     command.Parameters.AddWithValue("@userId", id);
@@ -246,7 +262,6 @@ namespace NewsApp.DAL
                             Role = reader.GetString(4),
                             AccountID = reader.GetInt32(5),
                             UserName = reader.GetString(6),
-                            // Đọc Avatar
                             Avatar = reader.IsDBNull(7) ? null : (byte[])reader[7]
                         };
                         return user;

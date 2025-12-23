@@ -7,6 +7,8 @@ namespace NewsApp.Common
         {
             public const string LOGIN = "LOGIN";
             public const string REGISTER = "REGISTER";
+            public const string FORGOT_PASSWORD = "FORGOT_PASSWORD";
+            public const string RESET_PASSWORD = "RESET_PASSWORD";
             public const string GET_LIST_ARTICLES = "GET_LIST_ARTICLES";
 
             public const string GET_ARTICLE_DETAIL = "GET_ARTICLE_DETAIL";
@@ -23,9 +25,7 @@ namespace NewsApp.Common
             public const string GET_ARTICLES_BY_CATEGORY = "GET_ARTICLES_BY_CATEGORY";
             public const string SEARCH_ARTICLES = "SEARCH_ARTICLES";
             public const string GET_COMMENTS = "GET_COMMENTS";
-
             public const string CHANGE_PASSWORD = "CHANGE_PASSWORD";
-
 
             // Admin Commands
             public const string GET_ALL_USERS = "GET_ALL_USERS";
@@ -35,7 +35,7 @@ namespace NewsApp.Common
             public const string UPDATE_CATEGORY = "UPDATE_CATEGORY";
             public const string DELETE_CATEGORY = "DELETE_CATEGORY";
 
-            public const string GET_PENDING_ARTICLES = "GET_PENDING_ARTICLES"; 
+            public const string GET_PENDING_ARTICLES = "GET_PENDING_ARTICLES";
             public const string APPROVE_ARTICLE = "APPROVE_ARTICLE";
         }
 
@@ -43,6 +43,12 @@ namespace NewsApp.Common
         {
             public const string LOGIN_SUCCESS = "LOGIN_SUCCESS";
             public const string REGISTER_SUCCESS = "REGISTER_SUCCESS";
+            public const string FORGOT_PASSWORD_SUCCESS = "FORGOT_PASSWORD_SUCCESS";
+            public const string FORGOT_PASSWORD_FAIL = "FORGOT_PASSWORD_FAIL";
+
+            public const string RESET_PASSWORD_SUCCESS = "RESET_PASSWORD_SUCCESS";
+            public const string RESET_PASSWORD_FAIL = "RESET_PASSWORD_FAIL";
+
             public const string GET_LIST_ARTICLES_SUCCESS = "GET_LIST_ARTICLES_SUCCESS";
             public const string LOGIN_FAIL = "LOGIN_FAIL";
             public const string REGISTER_FAIL = "REGISTER_FAIL";
@@ -80,7 +86,6 @@ namespace NewsApp.Common
 
             public const string CHANGE_PASSWORD_SUCCESS = "CHANGE_PASSWORD_SUCCESS";
             public const string CHANGE_PASSWORD_FAIL = "CHANGE_PASSWORD_FAIL";
-
 
 
             // Admin Response Commands

@@ -38,7 +38,6 @@ namespace NewsApp.UI
                 pbImage.Image = null;
             }
 
-            // Add click events
             this.Click += ArticleControl_Click;
             lblTitle.Click += ArticleControl_Click;
             pbImage.Click += ArticleControl_Click;
