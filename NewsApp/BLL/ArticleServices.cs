@@ -119,7 +119,6 @@ namespace NewsApp.BLL
             }
         }
 
-        // Methods để gửi requests
         public void GetListArticles()
         {
             if (IsConnected)
@@ -205,7 +204,7 @@ namespace NewsApp.BLL
                 Command = MessageProtocol.RequestCommand.POST_ARTICLE,
                 Payload = payload,
             };
-            _clientSocket.SendRequest(packet); 
+            _clientSocket.SendRequest(packet);
         }
 
         private void HandleConnectionStatusChanged(string message)

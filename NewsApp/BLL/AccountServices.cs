@@ -1,35 +1,28 @@
-
 using NewsApp.Common;
 using NewsApp.Data;
 using NewsApp.Network;
 using System.Text.Json;
 using System.Collections.Generic;
+using System;
 
 namespace NewsApp.BLL
 {
-
     public class AccountServices
     {
         private readonly ClientSocket _socketClient;
-
-        // Kết quả đăng ký
         public bool RegisterProcessing { get; set; }
-
-        // User đã đăng nhập
         public User? UserAuthenticated { get; private set; }
+        public bool IsConnected => _socketClient != null && _socketClient.IsConnected;
 
-        // Khai báo các sự kiện
-        public event Action<User?, string>? LoginResult;
-        public event Action<bool, string>? RegisterResult;
-        public event Action<string>? ConnectionStatusChanged;
-        public event Action<Packet, string>? ReceivedData;
-        public event Action<string>? ErrorData;
-        public event Action<bool, string>? UpdateProfileResult;
+        public event Action<User?, string>? LoginResult;           // Kết quả đăng nhập
+        public event Action<bool, string>? RegisterResult;         // Kết quả đăng ký
+        public event Action<string>? ConnectionStatusChanged;      // Trạng thái kết nối thay đổi
+        public event Action<Packet, string>? ReceivedData;         // Dữ liệu chung khác
+        public event Action<string>? ErrorData;                    // Báo lỗi chung
+        public event Action<bool, string>? UpdateProfileResult;    // Kết quả cập nhật hồ sơ
+        public event Action<bool, string>? ForgotPasswordResult;
+        public event Action<bool, string>? ResetPasswordResult;
         public event Action<bool, string>? ChangePasswordResult;
-
-        public bool IsConnected { get { return _socketClient != null && _socketClient.IsConnected; } }
-
-
 
         public AccountServices()
         {
@@ -52,35 +45,49 @@ namespace NewsApp.BLL
             switch (command)
             {
                 case MessageProtocol.ResponseCommand.LOGIN_SUCCESS:
-                    {
-                        User? user = JsonSerializer.Deserialize<User>(payload);
-                        UserAuthenticated = user;
-                        LoginResult?.Invoke(user, "Đăng nhập thành công");
-                    }
+                    var user = JsonSerializer.Deserialize<User>(payload);
+                    UserAuthenticated = user;
+                    LoginResult?.Invoke(user, "Đăng nhập thành công");
                     break;
+
                 case MessageProtocol.ResponseCommand.LOGIN_FAIL:
-                    {
-                        string errorMessage = JsonSerializer.Deserialize<string>(payload) ?? "Đăng nhập thất bại";
-                        LoginResult?.Invoke(null, errorMessage);
-                    }
+                    string loginErr = JsonSerializer.Deserialize<string>(payload) ?? "Đăng nhập thất bại";
+                    UserAuthenticated = null;
+                    LoginResult?.Invoke(null, loginErr);
                     break;
+
                 case MessageProtocol.ResponseCommand.REGISTER_SUCCESS:
-                    {
-                        RegisterResult?.Invoke(true, "Đăng ký thành công");
-                    }
+                    RegisterResult?.Invoke(true, "Đăng ký thành công");
                     break;
+
                 case MessageProtocol.ResponseCommand.REGISTER_FAIL:
-                    {
-                        RegisterResult?.Invoke(false, "Đăng ký thất bại");
-                    }
+                    RegisterResult?.Invoke(false, "Đăng ký thất bại");
                     break;
+
                 case MessageProtocol.ResponseCommand.UPDATE_PROFILE_SUCCESS:
                     UpdateProfileResult?.Invoke(true, "Cập nhật thông tin thành công!");
                     break;
 
                 case MessageProtocol.ResponseCommand.UPDATE_PROFILE_FAIL:
-                    UpdateProfileResult?.Invoke(false, "Cập nhật thất bại: " + packet.Payload);
+                    UpdateProfileResult?.Invoke(false, "Cập nhật thất bại: " + payload);
                     break;
+
+                case MessageProtocol.ResponseCommand.FORGOT_PASSWORD_SUCCESS:
+                    ForgotPasswordResult?.Invoke(true, "Mã OTP đã được gửi đến email của bạn.");
+                    break;
+
+                case MessageProtocol.ResponseCommand.FORGOT_PASSWORD_FAIL:
+                    ForgotPasswordResult?.Invoke(false, payload);
+                    break;
+
+                case MessageProtocol.ResponseCommand.RESET_PASSWORD_SUCCESS:
+                    ResetPasswordResult?.Invoke(true, "Đổi mật khẩu thành công. Vui lòng đăng nhập lại.");
+                    break;
+
+                case MessageProtocol.ResponseCommand.RESET_PASSWORD_FAIL:
+                    ResetPasswordResult?.Invoke(false, payload);
+                    break;
+
                 case MessageProtocol.ResponseCommand.CHANGE_PASSWORD_SUCCESS:
                     ChangePasswordResult?.Invoke(true, "Đổi mật khẩu thành công!");
                     break;
@@ -89,86 +96,85 @@ namespace NewsApp.BLL
                     string msg = JsonSerializer.Deserialize<string>(payload) ?? "Đổi mật khẩu thất bại";
                     ChangePasswordResult?.Invoke(false, msg);
                     break;
+
                 default:
+                    ReceivedData?.Invoke(packet, "Unhandled command");
                     break;
             }
         }
 
-        private void HandleLoginResult(User? packet, string command)
-        {
-            LoginResult?.Invoke(packet, command);
-        }
-
-        private void HandleRegisterResult(bool result, string command)
-        {
-            RegisterResult?.Invoke(result, command);
-        }
-
-        private void HandleErrorData(string message)
-        {
-            ErrorData?.Invoke(message);
-        }
-
-        private void HandleConnectionStatusChanged(string message)
-        {
-            ConnectionStatusChanged?.Invoke(message);
-        }
 
         public void Login(string userName, string password)
         {
-            if (IsConnected)
-            {
-                Account account = new()
-                {
-                    Username = userName,
-                    Password = password,
-                };
-                Packet requestPacket = new(MessageProtocol.RequestCommand.LOGIN, account);
-                _socketClient.SendRequest(requestPacket);
-            }
+            if (!IsConnected) return;
+
+            Account account = new() { Username = userName, Password = password };
+
+            Packet requestPacket = new(MessageProtocol.RequestCommand.LOGIN, account);
+            _socketClient.SendRequest(requestPacket);
         }
 
         public void Register(string userName, string password, string email, DateTime birthDay, string fullName, string role)
         {
-            if (IsConnected)
+            if (!IsConnected) return;
+
+            RegisterModel registerModel = new()
             {
-                RegisterModel registerModel = new()
-                {
-                    Username = userName,
-                    Password = password,
-                    Email = email,
-                    BirthDay = birthDay,
-                    FullName = fullName,
-                    Role = role
-                };
-                Packet requestPacket = new(MessageProtocol.RequestCommand.REGISTER, registerModel);
-                _socketClient.SendRequest(requestPacket);
-            }
+                Username = userName,
+                Password = password,
+                Email = email,
+                BirthDay = birthDay,
+                FullName = fullName,
+                Role = role
+            };
+
+            Packet requestPacket = new(MessageProtocol.RequestCommand.REGISTER, registerModel);
+            _socketClient.SendRequest(requestPacket);
         }
 
         public void Logout()
         {
-            if (IsConnected)
-            {
-                Packet requestPacket = new(MessageProtocol.RequestCommand.LOGOUT, "");
-                _socketClient.SendRequest(requestPacket);
-            }
+            if (!IsConnected) return;
+
+            UserAuthenticated = null;
+
+            Packet requestPacket = new(MessageProtocol.RequestCommand.LOGOUT, "");
+            _socketClient.SendRequest(requestPacket);
         }
 
         public void UpdateProfile(User user)
         {
-            if (IsConnected)
+            if (!IsConnected) return;
+
+            string payload = JsonSerializer.Serialize(user);
+            Packet request = new Packet(MessageProtocol.RequestCommand.UPDATE_PROFILE, payload);
+
+            _socketClient.SendRequest(request);
+        }
+
+        public void RequestForgotPassword(string email)
+        {
+            if (!IsConnected) return;
+
+            var packet = new Packet(MessageProtocol.RequestCommand.FORGOT_PASSWORD, email);
+            _socketClient.SendRequest(packet);
+        }
+
+        public void RequestResetPassword(string email, string otp, string newPass)
+        {
+            if (!IsConnected) return;
+
+            var data = new ResetPasswordModel
             {
-                // Serialize User thành JSON (bao gồm cả Avatar byte[])
-                string payload = JsonSerializer.Serialize(user);
+                Email = email,
+                OTP = otp,
+                NewPassword = newPass
+            };
 
-                Packet request = new Packet(
-                    MessageProtocol.RequestCommand.UPDATE_PROFILE,
-                    payload
-                );
+            string payload = JsonSerializer.Serialize(data);
 
-                _socketClient.SendRequest(request);
-            }
+            var packet = new Packet(MessageProtocol.RequestCommand.RESET_PASSWORD, payload);
+            _socketClient.SendRequest(packet);
         }
 
         public void ChangePassword(string username, string oldPass, string newPass)

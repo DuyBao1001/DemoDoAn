@@ -15,10 +15,8 @@ namespace NewsApp.UI
             InitializeComponent();
             _server = new ServerSocket();
 
-            // Đăng ký nhận log từ Server
             _server.OnLog += (msg) =>
             {
-                // Vì Server chạy luồng khác, phải dùng Invoke để vẽ lên Form
                 if (this.IsHandleCreated && !this.IsDisposed)
                 {
                     this.Invoke(new Action(() =>
@@ -35,7 +33,6 @@ namespace NewsApp.UI
             btnStart.Enabled = false;
             btnStop.Enabled = true;
 
-            // Chạy Server trên luồng riêng để không đơ Form
             _serverThread = new Thread(() =>
             {
                 _server.Start();

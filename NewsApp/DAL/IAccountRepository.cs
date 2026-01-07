@@ -12,5 +12,7 @@ namespace NewsApp.DAL
         public bool Update(Account account);
         bool VerifyPassword(string username, string password);
         bool UpdatePassword(string username, string newPassword);
+        bool CheckEmailExists(string email);
+        bool ResetPassword(string email, string newPassword);
     }
 }

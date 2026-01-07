@@ -16,7 +16,6 @@ namespace NewsApp.UI
 
         public void SetComment(Comment comment)
         {
-            // 1. Kiểm tra an toàn
             if (comment == null) return;
 
             lblAuthor.Text = comment.UserName ?? $"User {comment.UserID}";

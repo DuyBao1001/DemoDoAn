@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions; 
 using System.Windows.Forms;
 using NewsApp.BLL;
 using NewsApp.Data;
@@ -13,18 +14,14 @@ namespace NewsApp.UI
         {
             InitializeComponent();
 
-            // Cài đặt mặc định
             tbPassword.PasswordChar = '●';
             tbConfirmPass.PasswordChar = '●';
 
-            // Mặc định chọn role là Reader
             cboxReader.Checked = true;
             cboxWriter.Checked = false;
 
-            // Khởi tạo AccountServices
             _accountServices = new AccountServices();
 
-            // Subscribe events
             _accountServices.ConnectionStatusChanged += (status) =>
             {
                 if (this.InvokeRequired)
@@ -72,7 +69,6 @@ namespace NewsApp.UI
 
         private void cboxReader_CheckedChanged(object sender, EventArgs e)
         {
-            // Nếu Reader được chọn, thì bỏ chọn Writer
             if (cboxReader.Checked)
             {
                 cboxWriter.Checked = false;
@@ -85,19 +81,34 @@ namespace NewsApp.UI
 
         private void cboxWriter_CheckedChanged(object sender, EventArgs e)
         {
-            // Nếu Writer được chọn, thì bỏ chọn Reader
             if (cboxWriter.Checked)
             {
                 cboxReader.Checked = false;
             }
-            // Tương tự, không cho phép bỏ chọn cả hai
             else if (!cboxReader.Checked)
             {
                 cboxWriter.Checked = true;
             }
         }
 
-        // --- XỬ LÝ ĐĂNG KÝ ---
+        private bool IsValidEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
+
+            try
+            {
+
+                return Regex.IsMatch(email,
+                    @"^[^@\s]+@[^@\s]+\.[^@\s]+$",
+                    RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
+            }
+            catch (RegexMatchTimeoutException)
+            {
+                return false;
+            }
+        }
+
 
         private void BtnRegister_Click(object sender, EventArgs e)
         {
@@ -108,7 +119,6 @@ namespace NewsApp.UI
             string email = tbEmail.Text.Trim();
             DateTime birthDay = dtpickerBirth.Value;
 
-            // Validation
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Tên đăng nhập và mật khẩu không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -133,16 +143,20 @@ namespace NewsApp.UI
                 return;
             }
 
+            if (!IsValidEmail(email))
+            {
+                MessageBox.Show("Định dạng email không hợp lệ! Vui lòng kiểm tra lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             string selectedRole = cboxWriter.Checked ? "Writer" : "Reader";
 
-            // Kiểm tra kết nối
             if (!_accountServices.IsConnected)
             {
                 MessageBox.Show("Không có kết nối đến server! Vui lòng đảm bảo server đang chạy.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // Gửi request đăng ký thông qua AccountServices
             _accountServices.Register(username, password, email, birthDay, fullName, selectedRole);
         }
 

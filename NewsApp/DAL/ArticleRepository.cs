@@ -13,7 +13,6 @@ namespace NewsApp.DAL
             try
             {
                 using SqlConnection connection = GetConnection();
-                // --- SỬA ĐỔI: Thêm cột Status vào câu lệnh INSERT ---
                 string query = @"INSERT INTO Article (Title, Content, Image, PublishDate, AuthorID, CategoryID, Status)
                          VALUES (@title, @content, @image, @publishDate, @authorId, @categoryId, @status)";
 
@@ -24,9 +23,7 @@ namespace NewsApp.DAL
                 command.Parameters.AddWithValue("@publishDate", obj.PublishDate);
                 command.Parameters.AddWithValue("@authorId", obj.AuthorID);
                 command.Parameters.AddWithValue("@categoryId", obj.CategoryID);
-
-                // --- SỬA ĐỔI: Luôn set Status = 0 (Chờ duyệt) khi đăng bài mới ---
-                command.Parameters.AddWithValue("@status", 0);
+                command.Parameters.AddWithValue("@status", 0); // khi đăng lên thì cho 0 để chờ duyệt
 
                 connection.Open();
                 return command.ExecuteNonQuery() > 0;
@@ -358,14 +355,12 @@ namespace NewsApp.DAL
                                 ArticleID = reader.GetInt32(reader.GetOrdinal("ArticleID")),
                                 Title = reader.GetString(reader.GetOrdinal("Title")),
                                 Content = reader.GetString(reader.GetOrdinal("Content")),
-                                // Kiểm tra null cho cột Image
                                 Image = reader.IsDBNull(reader.GetOrdinal("Image")) ? null : (byte[])reader["Image"],
                                 PublishDate = reader.GetDateTime(reader.GetOrdinal("PublishDate")),
                                 AuthorID = reader.GetInt32(reader.GetOrdinal("AuthorID")),
                                 AuthorName = reader.GetString(reader.GetOrdinal("AuthorName")),
                                 CategoryID = reader.GetInt32(reader.GetOrdinal("CategoryID")),
                                 CategoryName = reader.GetString(reader.GetOrdinal("CategoryName")),
-                                // Đọc thêm cột Status nếu cần (tùy chọn)
                             };
                             articles.Add(article);
                         }

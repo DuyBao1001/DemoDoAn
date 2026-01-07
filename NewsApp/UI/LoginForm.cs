@@ -47,7 +47,6 @@ namespace NewsApp.UI
                 MessageBox.Show($"Đăng nhập thành công! Xin chào {user.FullName}");
                 this.Hide();
 
-                // Instantiate services
                 ArticleServices articleServices = new();
                 CategoryServices categoryServices = new();
                 CommentServices commentServices = new();
@@ -88,6 +87,18 @@ namespace NewsApp.UI
             registerForm.ShowDialog();
             this.Show();
             tbPassword.Clear();
+        }
+
+        private void llbForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            this.Hide();
+
+            ForgotPasswordForm forgotPassForm = new ForgotPasswordForm(_accountServices);
+
+            forgotPassForm.ShowDialog();
+
+            this.Show();
         }
     }
 }

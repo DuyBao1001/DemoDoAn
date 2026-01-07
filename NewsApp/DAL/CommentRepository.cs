@@ -56,7 +56,6 @@ namespace NewsApp.DAL
         public List<Comment> GetCommentsByArticleId(int articleId)
         {
             List<Comment> comments = new List<Comment>();
-            // 1. Thêm u.Avatar vào câu SELECT
             string query = @"
                 SELECT c.ArticleID, c.UserID, c.Content, c.Timestamp, u.FullName, u.Avatar
                 FROM Comment c
@@ -82,8 +81,6 @@ namespace NewsApp.DAL
                             Content = reader["Content"]?.ToString() ?? "",
                             Timestamp = (DateTime)reader["Timestamp"],
                             UserName = reader["FullName"]?.ToString() ?? "",
-
-                            // 2. Đọc dữ liệu Avatar từ database
                             UserAvatar = reader.IsDBNull(reader.GetOrdinal("Avatar")) ? null : (byte[])reader["Avatar"]
                         });
                     }
